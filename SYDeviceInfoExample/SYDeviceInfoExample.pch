@@ -1,0 +1,15 @@
+//
+//  SYDeviceInfoExample.pch
+//  SYDeviceInfoExample
+//
+//  Created by shenyuanluo on 2017/9/26.
+//  Copyright © 2017年 shenyuanluo. All rights reserved.
+//
+
+#ifndef SYDeviceInfoExample_pch
+#define SYDeviceInfoExample_pch
+
+#import "UIDevice+SYDeviceInfo.h"
+#import "GlobalData.h"
+
+#endif /* SYDeviceInfoExample_pch */
