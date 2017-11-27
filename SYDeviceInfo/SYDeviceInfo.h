@@ -1,16 +1,18 @@
 //
-//  UIDevice+SYDeviceInfo.h
+//  SYDeviceInfo.h
 //  SYDeviceInfoExample
 //
-//  Created by shenyuanluo on 2017/9/26.
-//  Copyright © 2017年 http://blog.shenyuanluo.com/ All rights reserved.
+//  Created by shenyuanluo on 2017/11/27.
+//  Copyright © 2017年 shenyuanluo. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
+
+/** 设备版本号枚举 */
 typedef NS_ENUM(NSUInteger, SYNameType) {
     SYName_Unknow                   = 0x0000,                   // Unknow type
-    SYName_Simulator                = 0x0001,
+    SYName_Simulator                = 0x0001,                   // Simulator
     
     SYName_iPod                     = 0x0010,                   // iPod touch
     SYName_iPod__2                  = 0x0011,                   // iPod touch (2nd generation)
@@ -58,11 +60,10 @@ typedef NS_ENUM(NSUInteger, SYNameType) {
     
     SYName_iPad_Pro_12_9            = 0x0700,                   // iPad Pro (12.9-inch)
     SYName_iPad_Pro_12_9__2         = 0x0701,                   // iPad Pro (12.9-inch, 2nd generation)
-    
-    
 };
 
 
+/** 设备类型枚举 */
 typedef NS_ENUM(NSUInteger, SYDeviceType) {
     SYType_Unknow                   = 0x00,                     // Unknow type
     SYType_Simulator                = 0x01,                     // Simulator
@@ -71,6 +72,8 @@ typedef NS_ENUM(NSUInteger, SYDeviceType) {
     SYType_iPad                     = 0x04,                     // iPad
 };
 
+
+/** 屏幕尺寸类型枚举 */
 typedef NS_ENUM(NSUInteger, SYScreenType) {
     SYScreen_Unknow                 = 0x00,                     // Unknow screen size
     SYScreen_iPod_3_5               = 0x01,                     // iPod (3.5-inch)
@@ -89,30 +92,159 @@ typedef NS_ENUM(NSUInteger, SYScreenType) {
 };
 
 
-@interface UIDevice (SYDeviceInfo)
+/** 电池状态枚举 */
+typedef NS_ENUM(NSUInteger, SYBatteryState) {
+    SYBattery_Unknow                = 0x00,                     // 未知
+    SYBattery_Unplugged             = 0x01,                     // 未充电
+    SYBattery_Charging              = 0x02,                     // 正在充电，未充满
+    SYBattery_Full                  = 0x03,                     // 正在充电，且已充满
+};
+
+
+@interface SYDeviceInfo : NSObject
+
 
 /**
- 获取当前设备的'名称'：iPhone 4s、iPhone 5s、iPhone 6s、iPhone 6s plus...
+ 获取当前设备的'名称'，参见'SYNameType'
  
  @return 具体的设备类型, 参见‘DeviceType’
  */
-- (SYNameType)syDeviceName;
++ (SYNameType)syDeviceName;
 
 
 /**
- 获取当前设备的‘类型’：iPhone、iPad...
+ 获取当前设备的‘类型’，参见'SYDeviceType'
  
  @return 设备类型，参见‘SYDeviceType’
  */
-- (SYDeviceType)syDeviceType;
-
++ (SYDeviceType)syDeviceType;
 
 
 /**
- 获取当前设备屏幕的‘大小’：3.5-inch、4.0-inch...
+ 获取当前设备屏幕的‘大小’，参见'SYScreenType'
  
  @return 屏幕大小，参见‘ScreenType’
  */
-- (SYScreenType)syScreenType;
++ (SYScreenType)syScreenType;
+
+
+/**
+ 获取设备昵称
+ 
+ @return 昵称
+ */
++ (NSString *)syNickName;
+
+
+/**
+ 获取通用唯一识别码‘UUID’
+ 
+ @return UUID
+ */
++ (NSString *)syUUID;
+
+
+/**
+ 获取屏幕宽度
+ 
+ @return 屏幕宽度
+ */
++ (CGFloat)syDeviceWidth;
+
+
+/**
+ 获取屏幕高度
+ 
+ @return 屏幕高度
+ */
++ (CGFloat)syDeviceHeight;
+
+
+/**
+ 获取电池电量
+ 
+ @return 电量
+ */
++ (CGFloat)syBatteryLevel;
+
+
+/**
+ 获取电池当前的状态
+ 
+ @return 电池状态，参见‘SYBatteryState’
+ */
++ (SYBatteryState)syBatteryState;
+
+
+/**
+ 获取系统名称
+ 
+ @return 系统名称
+ */
++ (NSString *)sySystemName;
+
+
+/**
+ 获取系统版本号
+ 
+ @return 系统版本号
+ */
++ (NSString *)sySystemVersion;
+
+
+/**
+ 获取设备 IP
+ 
+ @return 设备 IP
+ */
++ (NSString *)syDeviceIp;
+
+
+/**
+ 获取设备 MAC 地址
+ 
+ @return 设备 MAC 地址
+ */
++ (NSString *)syDeviceMac;
+
+
+/**
+ 获取总内存大小
+ 
+ @return 总内存大小
+ */
++ (unsigned long long)syTotalMemory;
+
+
+/**
+ 获取可用内存
+ 
+ @return 可用内存
+ */
++ (unsigned long long)syFreeMemory;
+
+
+/**
+ 获取总存储空间大小
+ 
+ @return 总存储空间大小
+ */
++ (unsigned long long)syTotalSpace;
+
+
+/**
+ 获取可用存储空间大小
+ 
+ @return 可用存储空间大小
+ */
++ (unsigned long long)syFreeSpace;
+
+
+/**
+ 获取当前语言
+ 
+ @return 当前语言
+ */
++ (NSString *)syLanguage;
 
 @end

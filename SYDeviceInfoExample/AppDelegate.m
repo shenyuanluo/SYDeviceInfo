@@ -17,9 +17,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    g_currentDevName    = [[UIDevice currentDevice] syDeviceName];
-    g_currentDevType    = [[UIDevice currentDevice] syDeviceType];
-    g_currentScreenType = [[UIDevice currentDevice] syScreenType];
     return YES;
 }
 

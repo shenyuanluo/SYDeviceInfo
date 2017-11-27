@@ -21,43 +21,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前设备类型：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJn-fm-oRt">
-                                <rect key="frame" x="126" y="323" width="122" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前设备屏幕：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZw-8D-JMQ">
-                                <rect key="frame" x="126" y="373" width="122" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前设备名称：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oN-kp-VTY">
-                                <rect key="frame" x="126" y="273" width="122" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gza-ZW-402">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设备信息" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qrm-OD-2M0">
+                                        <rect key="frame" x="152.5" y="11.5" width="70" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="qrm-OD-2M0" firstAttribute="centerX" secondItem="Gza-ZW-402" secondAttribute="centerX" id="5Dm-wa-Mbe"/>
+                                    <constraint firstItem="qrm-OD-2M0" firstAttribute="centerY" secondItem="Gza-ZW-402" secondAttribute="centerY" id="MKg-4B-3Kv"/>
+                                    <constraint firstAttribute="height" constant="44" id="Pi7-yx-6dI"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MnS-cB-foB">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="flg-p7-hez"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="F2W-Bl-VCt"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="MJn-fm-oRt" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Ayz-Bg-j18"/>
-                            <constraint firstItem="FZw-8D-JMQ" firstAttribute="top" secondItem="MJn-fm-oRt" secondAttribute="top" constant="50" id="CtK-kB-eOd"/>
-                            <constraint firstItem="FZw-8D-JMQ" firstAttribute="centerX" secondItem="MJn-fm-oRt" secondAttribute="centerX" id="I7w-ka-bei"/>
-                            <constraint firstItem="2oN-kp-VTY" firstAttribute="bottom" secondItem="MJn-fm-oRt" secondAttribute="bottom" constant="-50" id="JYF-Jc-upu"/>
-                            <constraint firstItem="MJn-fm-oRt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XJr-Yu-3Qk"/>
-                            <constraint firstItem="2oN-kp-VTY" firstAttribute="centerX" secondItem="MJn-fm-oRt" secondAttribute="centerX" id="jls-5J-9gI"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MnS-cB-foB" secondAttribute="bottom" id="6yS-th-2lp"/>
+                            <constraint firstItem="MnS-cB-foB" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="BzH-dD-b2F"/>
+                            <constraint firstItem="Gza-ZW-402" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="RXR-nf-UbH"/>
+                            <constraint firstItem="MnS-cB-foB" firstAttribute="top" secondItem="Gza-ZW-402" secondAttribute="bottom" id="baM-du-tSu"/>
+                            <constraint firstItem="MnS-cB-foB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rmG-Wr-AyM"/>
+                            <constraint firstItem="Gza-ZW-402" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="w4l-lY-Mye"/>
+                            <constraint firstItem="Gza-ZW-402" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="x1o-c0-cy9"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="nameLabel" destination="2oN-kp-VTY" id="rPN-Ng-VxN"/>
-                        <outlet property="sizeLabel" destination="FZw-8D-JMQ" id="10m-yg-9wc"/>
-                        <outlet property="typeLabel" destination="MJn-fm-oRt" id="3Jd-ir-djs"/>
+                        <outlet property="devInfoTableView" destination="MnS-cB-foB" id="BpG-KB-pVP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
         </scene>
     </scenes>
 </document>

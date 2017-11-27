@@ -7,17 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		140951231FCC3AE800A60C55 /* DevInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 140951221FCC3AE800A60C55 /* DevInfoModel.m */; };
+		140951271FCC3B0A00A60C55 /* DevInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 140951251FCC3B0A00A60C55 /* DevInfoTableViewCell.m */; };
+		140951281FCC3B0A00A60C55 /* DevInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 140951261FCC3B0A00A60C55 /* DevInfoTableViewCell.xib */; };
+		1409512B1FCC40E700A60C55 /* SYDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1409512A1FCC40E700A60C55 /* SYDeviceInfo.m */; };
 		14D94C981F7AA94E008D07C8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D94C971F7AA94E008D07C8 /* main.m */; };
 		14D94C9B1F7AA94E008D07C8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D94C9A1F7AA94E008D07C8 /* AppDelegate.m */; };
 		14D94C9E1F7AA94E008D07C8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D94C9D1F7AA94E008D07C8 /* ViewController.m */; };
 		14D94CA11F7AA94E008D07C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14D94C9F1F7AA94E008D07C8 /* Main.storyboard */; };
 		14D94CA31F7AA94E008D07C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14D94CA21F7AA94E008D07C8 /* Assets.xcassets */; };
 		14D94CA61F7AA94E008D07C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14D94CA41F7AA94E008D07C8 /* LaunchScreen.storyboard */; };
-		14D94CF81F7AB4E1008D07C8 /* UIDevice+SYDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D94CF71F7AB4E1008D07C8 /* UIDevice+SYDeviceInfo.m */; };
-		14D94CFB1F7AB66C008D07C8 /* GlobalData.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D94CFA1F7AB66C008D07C8 /* GlobalData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		140951211FCC3AE800A60C55 /* DevInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DevInfoModel.h; sourceTree = "<group>"; };
+		140951221FCC3AE800A60C55 /* DevInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DevInfoModel.m; sourceTree = "<group>"; };
+		140951241FCC3B0A00A60C55 /* DevInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DevInfoTableViewCell.h; sourceTree = "<group>"; };
+		140951251FCC3B0A00A60C55 /* DevInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DevInfoTableViewCell.m; sourceTree = "<group>"; };
+		140951261FCC3B0A00A60C55 /* DevInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DevInfoTableViewCell.xib; sourceTree = "<group>"; };
+		140951291FCC40E700A60C55 /* SYDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYDeviceInfo.h; sourceTree = "<group>"; };
+		1409512A1FCC40E700A60C55 /* SYDeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYDeviceInfo.m; sourceTree = "<group>"; };
 		14D94C931F7AA94E008D07C8 /* SYDeviceInfoExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SYDeviceInfoExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14D94C971F7AA94E008D07C8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		14D94C991F7AA94E008D07C8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -29,10 +38,6 @@
 		14D94CA51F7AA94E008D07C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14D94CA71F7AA94E008D07C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14D94CB61F7AABF6008D07C8 /* SYDeviceInfoExample.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYDeviceInfoExample.pch; sourceTree = "<group>"; };
-		14D94CF61F7AB4E1008D07C8 /* UIDevice+SYDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+SYDeviceInfo.h"; sourceTree = "<group>"; };
-		14D94CF71F7AB4E1008D07C8 /* UIDevice+SYDeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+SYDeviceInfo.m"; sourceTree = "<group>"; };
-		14D94CF91F7AB66C008D07C8 /* GlobalData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalData.h; sourceTree = "<group>"; };
-		14D94CFA1F7AB66C008D07C8 /* GlobalData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,13 +71,16 @@
 		14D94C951F7AA94E008D07C8 /* SYDeviceInfoExample */ = {
 			isa = PBXGroup;
 			children = (
-				14D94CF91F7AB66C008D07C8 /* GlobalData.h */,
-				14D94CFA1F7AB66C008D07C8 /* GlobalData.m */,
 				14D94C991F7AA94E008D07C8 /* AppDelegate.h */,
 				14D94C9A1F7AA94E008D07C8 /* AppDelegate.m */,
 				14D94C9C1F7AA94E008D07C8 /* ViewController.h */,
 				14D94C9D1F7AA94E008D07C8 /* ViewController.m */,
 				14D94C9F1F7AA94E008D07C8 /* Main.storyboard */,
+				140951211FCC3AE800A60C55 /* DevInfoModel.h */,
+				140951221FCC3AE800A60C55 /* DevInfoModel.m */,
+				140951241FCC3B0A00A60C55 /* DevInfoTableViewCell.h */,
+				140951251FCC3B0A00A60C55 /* DevInfoTableViewCell.m */,
+				140951261FCC3B0A00A60C55 /* DevInfoTableViewCell.xib */,
 				14D94CA21F7AA94E008D07C8 /* Assets.xcassets */,
 				14D94CA41F7AA94E008D07C8 /* LaunchScreen.storyboard */,
 				14D94CA71F7AA94E008D07C8 /* Info.plist */,
@@ -93,8 +101,8 @@
 		14D94CF51F7AB4E1008D07C8 /* SYDeviceInfo */ = {
 			isa = PBXGroup;
 			children = (
-				14D94CF61F7AB4E1008D07C8 /* UIDevice+SYDeviceInfo.h */,
-				14D94CF71F7AB4E1008D07C8 /* UIDevice+SYDeviceInfo.m */,
+				140951291FCC40E700A60C55 /* SYDeviceInfo.h */,
+				1409512A1FCC40E700A60C55 /* SYDeviceInfo.m */,
 			);
 			path = SYDeviceInfo;
 			sourceTree = "<group>";
@@ -160,6 +168,7 @@
 				14D94CA61F7AA94E008D07C8 /* LaunchScreen.storyboard in Resources */,
 				14D94CA31F7AA94E008D07C8 /* Assets.xcassets in Resources */,
 				14D94CA11F7AA94E008D07C8 /* Main.storyboard in Resources */,
+				140951281FCC3B0A00A60C55 /* DevInfoTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,9 +180,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				14D94C9E1F7AA94E008D07C8 /* ViewController.m in Sources */,
-				14D94CF81F7AB4E1008D07C8 /* UIDevice+SYDeviceInfo.m in Sources */,
+				140951231FCC3AE800A60C55 /* DevInfoModel.m in Sources */,
 				14D94C9B1F7AA94E008D07C8 /* AppDelegate.m in Sources */,
-				14D94CFB1F7AB66C008D07C8 /* GlobalData.m in Sources */,
+				140951271FCC3B0A00A60C55 /* DevInfoTableViewCell.m in Sources */,
+				1409512B1FCC40E700A60C55 /* SYDeviceInfo.m in Sources */,
 				14D94C981F7AA94E008D07C8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
