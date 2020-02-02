@@ -39,6 +39,12 @@ typedef NS_ENUM(NSUInteger, SYNameType) {
     SYName_iPhone_8                 = 0x010F,                   // iPhone 8
     SYName_iPhone_8_Plus            = 0x0110,                   // iPhone 8 Plus
     SYName_iPhone_X                 = 0x0111,                   // iPhone X
+    SYName_iPhone_XS                = 0x0112,                   // iPhone XS
+    SYName_iPhone_XS_Max            = 0x0113,                   // iPhone XS Max
+    SYName_iPhone_XR                = 0x0114,                   // iPhone XR
+    SYName_iPhone_11                = 0x0115,                   // iPhone 11
+    SYName_iPhone_11_Pro            = 0x0116,                   // iPhone 11 Pro
+    SYName_iPhone_11_Pro_Max        = 0x0117,                   // iPhone 11 Pro Max
     
     SYName_iPad                     = 0x0200,                   // iPad
     SYName_iPad__2                  = 0x0201,                   // iPad 2
@@ -84,6 +90,8 @@ typedef NS_ENUM(NSUInteger, SYScreenType) {
     SYScreen_iPhone_4_7             = 0x12,                     // iPhone (4.7-inch)
     SYScreen_iPhone_5_5             = 0x13,                     // iPhone (5.5-inch)
     SYScreen_iPhone_5_8             = 0x14,                     // iPhone (5.8-inch)
+    SYScreen_iPhone_6_1             = 0x15,                     // iPhone (6.1-inch)
+    SYScreen_iPhone_6_5             = 0x16,                     // iPhone (6.5-inch)
     
     SYScreen_iPad_7_9               = 0x20,                     // iPad mini (7.9-inch)
     SYScreen_iPad_9_7               = 0x21,                     // iPad 、iPad Air (9.7-inch)
@@ -98,6 +106,16 @@ typedef NS_ENUM(NSUInteger, SYBatteryState) {
     SYBattery_Unplugged             = 0x01,                     // 未充电
     SYBattery_Charging              = 0x02,                     // 正在充电，未充满
     SYBattery_Full                  = 0x03,                     // 正在充电，且已充满
+};
+
+/** iOS 设备当前系统语言 详细列表参见：https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes */
+typedef NS_ENUM(NSInteger, LanguageType) {
+    Language_zh              = 0,    // 中文
+    Language_en              = 1,    // 英语
+    Language_ja              = 2,    // 日语
+    Language_de              = 3,    // 德语
+    Language_fr              = 4,    // 法语
+    Language_es              = 5,    // 西班牙语
 };
 
 
@@ -158,6 +176,34 @@ typedef NS_ENUM(NSUInteger, SYBatteryState) {
  @return 屏幕高度
  */
 + (CGFloat)syDeviceHeight;
+
+/**
+ 获取设备状态栏高度
+ 
+ return 状态栏高度
+ */
++ (CGFloat)syStatusBarHeight;
+
+/**
+ 获取设备导航栏高度
+ 
+ return 状态栏高度
+ */
++ (CGFloat)syNavigationBarHeight;
+
+/**
+ 获取设备状态栏 + 导航栏高度
+ 
+ return 状态栏高度
+ */
++ (CGFloat)syStatusAndNavBarHeight;
+
+/**
+ 获取底部安全区域高度
+ 
+ return 安全区域高度
+ */
++ (CGFloat)syBottomSafeAreaHeight;
 
 
 /**
@@ -239,12 +285,25 @@ typedef NS_ENUM(NSUInteger, SYBatteryState) {
  */
 + (unsigned long long)syFreeSpace;
 
-
 /**
  获取当前语言
  
  @return 当前语言
  */
 + (NSString *)syLanguage;
+
+/**
+ 获取当前系统语言类型
+ 
+ @return 语言类型，参见‘LanguageType’
+ */
++ (LanguageType)syLanguageType;
+
+/**
+ 获取型号名
+ 
+ @return 设备型号名
+ */
++ (NSString *)syModelName;
 
 @end

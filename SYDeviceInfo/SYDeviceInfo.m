@@ -34,107 +34,116 @@
     if (!deviceNamesByCode)
     {
         deviceNamesByCode = @{
-                              @"i386"       : [NSNumber numberWithUnsignedInteger:SYName_Simulator],
-                              @"x86_64"     : [NSNumber numberWithUnsignedInteger:SYName_Simulator],
+                              @"i386"       : @(SYName_Simulator),
+                              @"x86_64"     : @(SYName_Simulator),
                               
                               // iPod
-                              @"iPod1,1"    : [NSNumber numberWithUnsignedInteger:SYName_iPod],
-                              @"iPod2,1"    : [NSNumber numberWithUnsignedInteger:SYName_iPod__2],
-                              @"iPod3,1"    : [NSNumber numberWithUnsignedInteger:SYName_iPod__3],
-                              @"iPod4,1"    : [NSNumber numberWithUnsignedInteger:SYName_iPod__4],
-                              @"iPod5,1"    : [NSNumber numberWithUnsignedInteger:SYName_iPod__5],
-                              @"iPod7,1"    : [NSNumber numberWithUnsignedInteger:SYName_iPod__6],
+                              @"iPod1,1"    : @(SYName_iPod),
+                              @"iPod2,1"    : @(SYName_iPod__2),
+                              @"iPod3,1"    : @(SYName_iPod__3),
+                              @"iPod4,1"    : @(SYName_iPod__4),
+                              @"iPod5,1"    : @(SYName_iPod__5),
+                              @"iPod7,1"    : @(SYName_iPod__6),
                               
                               // iPhone
-                              @"iPhone1,1"  : [NSNumber numberWithUnsignedInteger:SYName_iPhone],
-                              @"iPhone1,2"  : [NSNumber numberWithUnsignedInteger:SYName_iPhone_3G],
-                              @"iPhone2,1"  : [NSNumber numberWithUnsignedInteger:SYName_iPhone_3GS],
+                              @"iPhone1,1"  : @(SYName_iPhone),
+                              @"iPhone1,2"  : @(SYName_iPhone_3G),
+                              @"iPhone2,1"  : @(SYName_iPhone_3GS),
                               
-                              @"iPhone3,1"  : [NSNumber numberWithUnsignedInteger:SYName_iPhone_4],
-                              @"iPhone3,2"  : [NSNumber numberWithUnsignedInteger:SYName_iPhone_4],
-                              @"iPhone3,3"  : [NSNumber numberWithUnsignedInteger:SYName_iPhone_4],
-                              @"iPhone4,1"  : [NSNumber numberWithUnsignedInteger:SYName_iPhone_4S],
+                              @"iPhone3,1"  : @(SYName_iPhone_4),
+                              @"iPhone3,2"  : @(SYName_iPhone_4),
+                              @"iPhone3,3"  : @(SYName_iPhone_4),
+                              @"iPhone4,1"  : @(SYName_iPhone_4S),
                               
-                              @"iPhone5,1"  : [NSNumber numberWithUnsignedInteger:SYName_iPhone_5],
-                              @"iPhone5,2"  : [NSNumber numberWithUnsignedInteger:SYName_iPhone_5],
-                              @"iPhone5,3"  : [NSNumber numberWithUnsignedInteger:SYName_iPhone_5C],
-                              @"iPhone5,4"  : [NSNumber numberWithUnsignedInteger:SYName_iPhone_5C],
-                              @"iPhone6,1"  : [NSNumber numberWithUnsignedInteger:SYName_iPhone_5S],
-                              @"iPhone6,2"  : [NSNumber numberWithUnsignedInteger:SYName_iPhone_5S],
+                              @"iPhone5,1"  : @(SYName_iPhone_5),
+                              @"iPhone5,2"  : @(SYName_iPhone_5),
+                              @"iPhone5,3"  : @(SYName_iPhone_5C),
+                              @"iPhone5,4"  : @(SYName_iPhone_5C),
+                              @"iPhone6,1"  : @(SYName_iPhone_5S),
+                              @"iPhone6,2"  : @(SYName_iPhone_5S),
                               
-                              @"iPhone7,2"  : [NSNumber numberWithUnsignedInteger:SYName_iPhone_6],
-                              @"iPhone7,1"  : [NSNumber numberWithUnsignedInteger:SYName_iPhone_6_Plus],
-                              @"iPhone8,1"  : [NSNumber numberWithUnsignedInteger:SYName_iPhone_6S],
-                              @"iPhone8,2"  : [NSNumber numberWithUnsignedInteger:SYName_iPhone_6S_Plus],
+                              @"iPhone7,2"  : @(SYName_iPhone_6),
+                              @"iPhone7,1"  : @(SYName_iPhone_6_Plus),
+                              @"iPhone8,1"  : @(SYName_iPhone_6S),
+                              @"iPhone8,2"  : @(SYName_iPhone_6S_Plus),
                               
-                              @"iPhone8,4"  : [NSNumber numberWithUnsignedInteger:SYName_iPhone_SE],
+                              @"iPhone8,4"  : @(SYName_iPhone_SE),
                               
-                              @"iPhone9,1"  : [NSNumber numberWithUnsignedInteger:SYName_iPhone_7],
-                              @"iPhone9,3"  : [NSNumber numberWithUnsignedInteger:SYName_iPhone_7],
-                              @"iphone9,2"  : [NSNumber numberWithUnsignedInteger:SYName_iPhone_7_Plus],
-                              @"iphone9,4"  : [NSNumber numberWithUnsignedInteger:SYName_iPhone_7_Plus],
+                              @"iPhone9,1"  : @(SYName_iPhone_7),
+                              @"iPhone9,3"  : @(SYName_iPhone_7),
+                              @"iPhone9,2"  : @(SYName_iPhone_7_Plus),
+                              @"iPhone9,4"  : @(SYName_iPhone_7_Plus),
                               
-                              @"iPhone10,1" : [NSNumber numberWithUnsignedInteger:SYName_iPhone_8],
-                              @"iPhone10,4" : [NSNumber numberWithUnsignedInteger:SYName_iPhone_8],
-                              @"iPhone10,2" : [NSNumber numberWithUnsignedInteger:SYName_iPhone_8_Plus],
-                              @"iPhone10,5" : [NSNumber numberWithUnsignedInteger:SYName_iPhone_8_Plus],
+                              @"iPhone10,1" : @(SYName_iPhone_8),
+                              @"iPhone10,4" : @(SYName_iPhone_8),
+                              @"iPhone10,2" : @(SYName_iPhone_8_Plus),
+                              @"iPhone10,5" : @(SYName_iPhone_8_Plus),
                               
-                              @"iPhone10,3" : [NSNumber numberWithUnsignedInteger:SYName_iPhone_X],
-                              @"iPhone10,6" : [NSNumber numberWithUnsignedInteger:SYName_iPhone_X],
+                              @"iPhone10,3" : @(SYName_iPhone_X),
+                              @"iPhone10,6" : @(SYName_iPhone_X),
+                              
+                              @"iPhone11,2" : @(SYName_iPhone_XS),
+                              @"iPhone11,4" : @(SYName_iPhone_XS_Max),
+                              @"iPhone11,6" : @(SYName_iPhone_XS_Max),
+                              @"iPhone11,8" : @(SYName_iPhone_XR),
+                              
+                              @"iPhone12,1" : @(SYName_iPhone_11),
+                              @"iPhone12,3" : @(SYName_iPhone_11_Pro),
+                              @"iPhone12,5" : @(SYName_iPhone_11_Pro_Max),
                               
                               // iPad
-                              @"iPad1,1"    : [NSNumber numberWithUnsignedInteger:SYName_iPad],
-                              @"iPad2,1"    : [NSNumber numberWithUnsignedInteger:SYName_iPad__2],
-                              @"iPad2,2"    : [NSNumber numberWithUnsignedInteger:SYName_iPad__2],
-                              @"iPad2,3"    : [NSNumber numberWithUnsignedInteger:SYName_iPad__2],
-                              @"iPad2,4"    : [NSNumber numberWithUnsignedInteger:SYName_iPad__2],
+                              @"iPad1,1"    : @(SYName_iPad),
+                              @"iPad2,1"    : @(SYName_iPad__2),
+                              @"iPad2,2"    : @(SYName_iPad__2),
+                              @"iPad2,3"    : @(SYName_iPad__2),
+                              @"iPad2,4"    : @(SYName_iPad__2),
                               
-                              @"iPad3,1"    : [NSNumber numberWithUnsignedInteger:SYName_iPad__3],
-                              @"iPad3,2"    : [NSNumber numberWithUnsignedInteger:SYName_iPad__3],
-                              @"iPad3,3"    : [NSNumber numberWithUnsignedInteger:SYName_iPad__3],
+                              @"iPad3,1"    : @(SYName_iPad__3),
+                              @"iPad3,2"    : @(SYName_iPad__3),
+                              @"iPad3,3"    : @(SYName_iPad__3),
                               
-                              @"iPad3,4"    : [NSNumber numberWithUnsignedInteger:SYName_iPad__4],
-                              @"iPad3,5"    : [NSNumber numberWithUnsignedInteger:SYName_iPad__4],
-                              @"iPad3,6"    : [NSNumber numberWithUnsignedInteger:SYName_iPad__4],
+                              @"iPad3,4"    : @(SYName_iPad__4),
+                              @"iPad3,5"    : @(SYName_iPad__4),
+                              @"iPad3,6"    : @(SYName_iPad__4),
                               
-                              @"iPad6,11"   : [NSNumber numberWithUnsignedInteger:SYName_iPad__5],
-                              @"iPad6,12"   : [NSNumber numberWithUnsignedInteger:SYName_iPad__5],
+                              @"iPad6,11"   : @(SYName_iPad__5),
+                              @"iPad6,12"   : @(SYName_iPad__5),
                               
                               // iPad Air
-                              @"iPad4,1"    : [NSNumber numberWithUnsignedInteger:SYName_iPad_Air],
-                              @"iPad4,2"    : [NSNumber numberWithUnsignedInteger:SYName_iPad_Air],
-                              @"iPad4,3"    : [NSNumber numberWithUnsignedInteger:SYName_iPad_Air],
-                              @"iPad5,3"    : [NSNumber numberWithUnsignedInteger:SYName_iPad_Air__2],
-                              @"iPad5,4"    : [NSNumber numberWithUnsignedInteger:SYName_iPad_Air__2],
+                              @"iPad4,1"    : @(SYName_iPad_Air),
+                              @"iPad4,2"    : @(SYName_iPad_Air),
+                              @"iPad4,3"    : @(SYName_iPad_Air),
+                              @"iPad5,3"    : @(SYName_iPad_Air__2),
+                              @"iPad5,4"    : @(SYName_iPad_Air__2),
                               
                               // iPad mini
-                              @"iPad2,5"    : [NSNumber numberWithUnsignedInteger:SYName_iPad_Mini],
-                              @"iPad2,6"    : [NSNumber numberWithUnsignedInteger:SYName_iPad_Mini],
-                              @"iPad2,7"    : [NSNumber numberWithUnsignedInteger:SYName_iPad_Mini],
+                              @"iPad2,5"    : @(SYName_iPad_Mini),
+                              @"iPad2,6"    : @(SYName_iPad_Mini),
+                              @"iPad2,7"    : @(SYName_iPad_Mini),
                               
-                              @"iPad4,4"    : [NSNumber numberWithUnsignedInteger:SYName_iPad_Mini__2],
-                              @"iPad4,5"    : [NSNumber numberWithUnsignedInteger:SYName_iPad_Mini__2],
-                              @"iPad4,6"    : [NSNumber numberWithUnsignedInteger:SYName_iPad_Mini__2],
+                              @"iPad4,4"    : @(SYName_iPad_Mini__2),
+                              @"iPad4,5"    : @(SYName_iPad_Mini__2),
+                              @"iPad4,6"    : @(SYName_iPad_Mini__2),
                               
-                              @"iPad4,7"    : [NSNumber numberWithUnsignedInteger:SYName_iPad_Mini__3],
-                              @"iPad4,8"    : [NSNumber numberWithUnsignedInteger:SYName_iPad_Mini__3],
-                              @"iPad4,9"    : [NSNumber numberWithUnsignedInteger:SYName_iPad_Mini__3],
+                              @"iPad4,7"    : @(SYName_iPad_Mini__3),
+                              @"iPad4,8"    : @(SYName_iPad_Mini__3),
+                              @"iPad4,9"    : @(SYName_iPad_Mini__3),
                               
-                              @"iPad5,1"    : [NSNumber numberWithUnsignedInteger:SYName_iPad_Mini__4],
-                              @"iPad5,2"    : [NSNumber numberWithUnsignedInteger:SYName_iPad_Mini__4],
+                              @"iPad5,1"    : @(SYName_iPad_Mini__4),
+                              @"iPad5,2"    : @(SYName_iPad_Mini__4),
                               
                               // iPad Pro
-                              @"iPad6,3"    : [NSNumber numberWithUnsignedInteger:SYName_iPad_Pro_9_7],
-                              @"iPad6,4"    : [NSNumber numberWithUnsignedInteger:SYName_iPad_Pro_9_7],
+                              @"iPad6,3"    : @(SYName_iPad_Pro_9_7),
+                              @"iPad6,4"    : @(SYName_iPad_Pro_9_7),
                               
-                              @"iPad7,3"    : [NSNumber numberWithUnsignedInteger:SYName_iPad_Pro_10_5],
-                              @"iPad7,4"    : [NSNumber numberWithUnsignedInteger:SYName_iPad_Pro_10_5],
+                              @"iPad7,3"    : @(SYName_iPad_Pro_10_5),
+                              @"iPad7,4"    : @(SYName_iPad_Pro_10_5),
                               
-                              @"iPad6,7"    : [NSNumber numberWithUnsignedInteger:SYName_iPad_Pro_12_9],
-                              @"iPad6,8"    : [NSNumber numberWithUnsignedInteger:SYName_iPad_Pro_12_9],
+                              @"iPad6,7"    : @(SYName_iPad_Pro_12_9),
+                              @"iPad6,8"    : @(SYName_iPad_Pro_12_9),
                               
-                              @"iPad7,1"    : [NSNumber numberWithUnsignedInteger:SYName_iPad_Pro_12_9__2],
-                              @"iPad7,2"    : [NSNumber numberWithUnsignedInteger:SYName_iPad_Pro_12_9__2],
+                              @"iPad7,1"    : @(SYName_iPad_Pro_12_9__2),
+                              @"iPad7,2"    : @(SYName_iPad_Pro_12_9__2),
                               };
     }
     
@@ -184,7 +193,14 @@
              || SYName_iPhone_7_Plus == nameType
              || SYName_iPhone_8 == nameType
              || SYName_iPhone_8_Plus == nameType
-             || SYName_iPhone_X == nameType)
+             || SYName_iPhone_X == nameType
+             
+             || SYName_iPhone_XS == nameType
+             || SYName_iPhone_XS_Max == nameType
+             || SYName_iPhone_XR == nameType
+             || SYName_iPhone_11 == nameType
+             || SYName_iPhone_11_Pro == nameType
+             || SYName_iPhone_11_Pro_Max == nameType)
     {
         deviceType = SYType_iPhone;
     }
@@ -258,9 +274,21 @@
     {
         screenSize = SYScreen_iPhone_5_5;
     }
-    else if (SYName_iPhone_X == nameType)
+    else if (SYName_iPhone_X == nameType
+             || SYName_iPhone_XS == nameType
+             || SYName_iPhone_11_Pro == nameType)
     {
         screenSize = SYScreen_iPhone_5_8;
+    }
+    else if (SYName_iPhone_XR == nameType
+             || SYName_iPhone_11 == nameType)
+    {
+        screenSize = SYScreen_iPhone_6_1;
+    }
+    else if (SYName_iPhone_XS_Max == nameType
+             || SYName_iPhone_11_Pro_Max == nameType)
+    {
+        screenSize = SYScreen_iPhone_6_5;
     }
     else if (SYName_iPad_Mini == nameType
              || SYName_iPad_Mini__2 == nameType
@@ -321,6 +349,81 @@
     return [UIScreen mainScreen].bounds.size.height;
 }
 
+#pragma mark -- 获取状态栏高度
++ (CGFloat)syStatusBarHeight
+{
+    CGFloat statusBarHeight;
+    SYScreenType screenType = [self syScreenType];
+    switch (screenType)
+    {
+        case SYScreen_iPhone_4_0:
+        case SYScreen_iPhone_4_7:
+        case SYScreen_iPhone_5_5:
+        {
+            statusBarHeight = 20.0f;
+        }
+            break;
+            
+        case SYScreen_iPhone_5_8:
+        case SYScreen_iPhone_6_1:
+        case SYScreen_iPhone_6_5:
+        {
+            statusBarHeight = 44.0f;
+        }
+            break;
+            
+        default:
+        {
+            statusBarHeight = 20.0f;
+        }
+            break;
+    }
+    return statusBarHeight;
+}
+
+#pragma mark -- 获取设备导航栏高度
++ (CGFloat)syNavigationBarHeight
+{
+    return 44.0f;
+}
+
+#pragma mark -- 获取设备状态栏 + 导航栏高度
++ (CGFloat)syStatusAndNavBarHeight
+{
+    return [self syStatusBarHeight] + [self syNavigationBarHeight];
+}
+
+#pragma mark -- 获取底部安全区域高度
++ (CGFloat)syBottomSafeAreaHeight
+{
+    CGFloat safeAreaHeight;
+    SYScreenType screenType = [self syScreenType];
+    switch (screenType)
+    {
+        case SYScreen_iPhone_4_0:
+        case SYScreen_iPhone_4_7:
+        case SYScreen_iPhone_5_5:
+        {
+            safeAreaHeight = 0.0f;
+        }
+            break;
+            
+        case SYScreen_iPhone_5_8:
+        case SYScreen_iPhone_6_1:
+        case SYScreen_iPhone_6_5:
+        {
+            safeAreaHeight = 34.0f;
+        }
+            break;
+            
+        default:
+        {
+            safeAreaHeight = 0.0f;
+        }
+            break;
+    }
+    return safeAreaHeight;
+}
 
 #pragma mark -- 获取电池电量
 + (CGFloat)syBatteryLevel
@@ -517,9 +620,225 @@
 #pragma mark -- 获取语言
 + (NSString *)syLanguage
 {
-    NSArray *languageArray = [NSLocale preferredLanguages];
-    return [languageArray objectAtIndex:0];
+    NSString *language = [[NSLocale preferredLanguages] firstObject];
+    NSLog(@"language = %@", language);
+    return language;
 }
 
++ (LanguageType)syLanguageType
+{
+    NSString *language = [self syLanguage];
+    static NSDictionary *languageByCode = nil;
+    
+    if (!languageByCode) {
+        
+        languageByCode = @{
+                           @"zh" : @(Language_zh),
+                           @"en" : @(Language_en),
+                           @"ja" : @(Language_ja),
+                           @"de" : @(Language_de),
+                           @"fr" : @(Language_fr),
+                           @"es" : @(Language_es)
+                           };
+    }
+    NSString *localeLanguageCode = [language substringToIndex:2];
+    
+    NSLog(@"localeLanguageCode = %@", localeLanguageCode);
+    
+    return [languageByCode[localeLanguageCode] integerValue];
+}
+
+#pragma mark -- 获取型号名
++ (NSString *)syModelName
+{
+    struct utsname systemInfo;
+    uname(&systemInfo);
+    
+    NSString *code = [NSString stringWithCString:systemInfo.machine
+                                        encoding:NSUTF8StringEncoding];
+    
+    
+    // 模拟器
+    if ([@"i386" isEqualToString:code] || [@"x86_64" isEqualToString:code])
+    {
+        return @"Simulator";
+    }
+    // iPod
+    else if ([@"iPod1,1" isEqualToString:code])
+    {
+        return @"iPod touch";
+    }
+    else if ([@"iPod2,1" isEqualToString:code])
+    {
+        return @"iPod touch 2";
+    }
+    else if ([@"iPod3,1" isEqualToString:code])
+    {
+        return @"iPod touch 3";
+    }
+    else if ([@"iPod4,1" isEqualToString:code])
+    {
+        return @"iPod touch 4";
+    }
+    else if ([@"iPod5,1" isEqualToString:code])
+    {
+        return @"iPod touch 5";
+    }
+    else if ([@"iPod7,1" isEqualToString:code])
+    {
+        return @"iPod touch 6";
+    }
+    // iPhone
+    else if ([@"iPhone1,1" isEqualToString:code])
+    {
+        return @"iPhone";
+    }
+    else if ([@"iPhone1,2" isEqualToString:code])
+    {
+        return @"iPhone 3G";
+    }
+    else if ([@"iPhone2,1" isEqualToString:code])
+    {
+        return @"iPhone 3GS";
+    }
+    else if ([@"iPhone3,1" isEqualToString:code] || [@"iPhone3,2" isEqualToString:code] || [@"iPhone3,3" isEqualToString:code])
+    {
+        return @"iPhone 4";
+    }
+    else if ([@"iPhone4,1" isEqualToString:code])
+    {
+        return @"iPhone 4S";
+    }
+    else if ([@"iPhone5,1" isEqualToString:code] || [@"iPhone5,2" isEqualToString:code])
+    {
+        return @"iPhone 5";
+    }
+    else if ([@"iPhone5,3" isEqualToString:code] || [@"iPhone5,4" isEqualToString:code])
+    {
+        return @"iPhone 5C";
+    }
+    else if ([@"iPhone6,1" isEqualToString:code] || [@"iPhone6,2" isEqualToString:code])
+    {
+        return @"iPhone 5S";
+    }
+    else if ([@"iPhone7,2" isEqualToString:code])
+    {
+        return @"iPhone 6";
+    }
+    else if ([@"iPhone7,1" isEqualToString:code])
+    {
+        return @"iPhone 6-Plus";
+    }
+    else if ([@"iPhone8,1" isEqualToString:code])
+    {
+        return @"iPhone 6S";
+    }
+    else if ([@"iPhone8,2" isEqualToString:code])
+    {
+        return @"iPhone 6S-Plus";
+    }
+    else if ([@"iPhone8,4" isEqualToString:code])
+    {
+        return @"iPhone SE";
+    }
+    else if ([@"iPhone9,1" isEqualToString:code] || [@"iPhone9,3" isEqualToString:code])
+    {
+        return @"iPhone 7";
+    }
+    else if ([@"iphone9,2" isEqualToString:code] || [@"iphone9,4" isEqualToString:code])
+    {
+        return @"iPhone 7-Plsu";
+    }
+    else if ([@"iPhone10,1" isEqualToString:code] || [@"iPhone10,4" isEqualToString:code])
+    {
+        return @"iPhone 8";
+    }
+    else if ([@"iPhone10,2" isEqualToString:code] || [@"iPhone10,5" isEqualToString:code])
+    {
+        return @"iPhone 8-Plsu";
+    }
+    else if ([@"iPhone10,3" isEqualToString:code] || [@"iPhone10,6" isEqualToString:code])
+    {
+        return @"iPhone X";
+    }
+    else if ([@"iPhone11,2" isEqualToString:code])
+    {
+        return @"iPhone XS";
+    }
+    else if ([@"iPhone11,4" isEqualToString:code] || [@"iPhone11,6" isEqualToString:code])
+    {
+        return @"iPhone XS-Max";
+    }
+    else if ([@"iPhone11,8" isEqualToString:code])
+    {
+        return @"iPhone XR";
+    }
+    // iPad
+    else if ([@"iPad1,1" isEqualToString:code])
+    {
+        return @"iPad";
+    }
+    else if ([@"iPad2,1" isEqualToString:code] || [@"iPad2,2" isEqualToString:code]
+             || [@"iPad2,3" isEqualToString:code] || [@"iPad2,4" isEqualToString:code])
+    {
+        return @"iPad 2";
+    }
+    else if ([@"iPad3,1" isEqualToString:code] || [@"iPad3,2" isEqualToString:code] || [@"iPad3,3" isEqualToString:code])
+    {
+        return @"iPad 3";
+    }
+    else if ([@"iPad3,4" isEqualToString:code] || [@"iPad3,5" isEqualToString:code] || [@"iPad3,6" isEqualToString:code])
+    {
+        return @"iPad 4";
+    }
+    else if ([@"iPad6,11" isEqualToString:code] || [@"iPad6,12" isEqualToString:code])
+    {
+        return @"iPad 5";
+    }
+    // iPad Air
+    else if ([@"iPad4,1" isEqualToString:code] || [@"iPad4,2" isEqualToString:code] || [@"iPad4,3" isEqualToString:code])
+    {
+        return @"iPad Air";
+    }
+    else if ([@"iPad5,3" isEqualToString:code] || [@"iPad5,4" isEqualToString:code])
+    {
+        return @"iPad Air 2";
+    }
+    // iPad mini
+    else if ([@"iPad2,5" isEqualToString:code] || [@"iPad2,6" isEqualToString:code] || [@"iPad2,7" isEqualToString:code])
+    {
+        return @"iPad mini";
+    }
+    else if ([@"iPad4,4" isEqualToString:code] || [@"iPad4,5" isEqualToString:code] || [@"iPad4,6" isEqualToString:code])
+    {
+        return @"iPad mini 2";
+    }
+    else if ([@"iPad4,7" isEqualToString:code] || [@"iPad4,8" isEqualToString:code] || [@"iPad4,9" isEqualToString:code])
+    {
+        return @"iPad mini 3";
+    }
+    else if ([@"iPad5,1" isEqualToString:code] || [@"iPad5,2" isEqualToString:code])
+    {
+        return @"iPad mini 4";
+    }
+    // iPad Pro
+    else if ([@"iPad6,3" isEqualToString:code] || [@"iPad6,4" isEqualToString:code])
+    {
+        return @"iPad Pro (9.7-inch)";
+    }
+    else if ([@"iPad7,3" isEqualToString:code] || [@"iPad7,4" isEqualToString:code])
+    {
+        return @"iPad Pro (10.5-inch)";
+    }
+    else if ([@"iPad6,7" isEqualToString:code] || [@"iPad6,8" isEqualToString:code])
+    {
+        return @"iPad Pro (12.9-inch)";
+    }
+    else if ([@"iPad7,1" isEqualToString:code] || [@"iPad7,2" isEqualToString:code])
+    {
+        return @"iPad Pro (12.9-inch) 2";
+    }
+    return @"Unknow";
+}
 
 @end
