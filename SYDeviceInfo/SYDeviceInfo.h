@@ -110,12 +110,13 @@ typedef NS_ENUM(NSUInteger, SYBatteryState) {
 
 /** iOS 设备当前系统语言 详细列表参见：https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes */
 typedef NS_ENUM(NSInteger, LanguageType) {
-    Language_zh              = 0,    // 中文
-    Language_en              = 1,    // 英语
-    Language_ja              = 2,    // 日语
-    Language_de              = 3,    // 德语
-    Language_fr              = 4,    // 法语
-    Language_es              = 5,    // 西班牙语
+    Language_Chinese        = 0,    // 中文
+    Language_English        = 1,    // 英语
+    Language_Japanese       = 2,    // 日语
+    Language_German         = 3,    // 德语
+    Language_French         = 4,    // 法语
+    Language_Spanish        = 5,    // 西班牙语
+    Language_Korean         = 6,    // 韩语
 };
 
 

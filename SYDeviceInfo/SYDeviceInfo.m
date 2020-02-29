@@ -633,12 +633,13 @@
     if (!languageByCode) {
         
         languageByCode = @{
-                           @"zh" : @(Language_zh),
-                           @"en" : @(Language_en),
-                           @"ja" : @(Language_ja),
-                           @"de" : @(Language_de),
-                           @"fr" : @(Language_fr),
-                           @"es" : @(Language_es)
+                           @"zh" : @(Language_Chinese),
+                           @"en" : @(Language_English),
+                           @"ja" : @(Language_Japanese),
+                           @"de" : @(Language_German),
+                           @"fr" : @(Language_French),
+                           @"es" : @(Language_Spanish),
+                           @"ko" : @(Language_Korean),
                            };
     }
     NSString *localeLanguageCode = [language substringToIndex:2];
