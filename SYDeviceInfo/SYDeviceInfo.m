@@ -44,6 +44,7 @@
                               @"iPod4,1"    : @(SYName_iPod__4),
                               @"iPod5,1"    : @(SYName_iPod__5),
                               @"iPod7,1"    : @(SYName_iPod__6),
+                              @"iPod9,1"    : @(SYName_iPod__7),
                               
                               // iPhone
                               @"iPhone1,1"  : @(SYName_iPhone),
@@ -91,46 +92,87 @@
                               @"iPhone12,3" : @(SYName_iPhone_11_Pro),
                               @"iPhone12,5" : @(SYName_iPhone_11_Pro_Max),
                               
+                              @"iPhone12,8" : @(SYName_iPhone_SE_2),
+                              @"iPhone13,1" : @(SYName_iPhone_12_mini),
+                              @"iPhone13,2" : @(SYName_iPhone_12),
+                              @"iPhone13,3" : @(SYName_iPhone_12_Pro),
+                              @"iPhone13,4" : @(SYName_iPhone_12_Pro_Max),
+                              
+                              @"iPhone14,4" : @(SYName_iPhone_13_mini),
+                              @"iPhone14,5" : @(SYName_iPhone_13),
+                              @"iPhone14,2" : @(SYName_iPhone_13_Pro),
+                              @"iPhone14,3" : @(SYName_iPhone_13_Pro_Max),
+                              
+                              @"iPhone14,6" : @(SYName_iPhone_SE_3),
+                              @"iPhone14,7" : @(SYName_iPhone_14),
+                              @"iPhone14,8" : @(SYName_iPhone_14_Plus),
+                              @"iPhone15,2" : @(SYName_iPhone_14_Pro),
+                              @"iPhone15,3" : @(SYName_iPhone_14_Pro_Max),
+                              
                               // iPad
                               @"iPad1,1"    : @(SYName_iPad),
-                              @"iPad2,1"    : @(SYName_iPad__2),
-                              @"iPad2,2"    : @(SYName_iPad__2),
-                              @"iPad2,3"    : @(SYName_iPad__2),
-                              @"iPad2,4"    : @(SYName_iPad__2),
+                              @"iPad2,1"    : @(SYName_iPad_2),
+                              @"iPad2,2"    : @(SYName_iPad_2),
+                              @"iPad2,3"    : @(SYName_iPad_2),
+                              @"iPad2,4"    : @(SYName_iPad_2),
                               
-                              @"iPad3,1"    : @(SYName_iPad__3),
-                              @"iPad3,2"    : @(SYName_iPad__3),
-                              @"iPad3,3"    : @(SYName_iPad__3),
+                              @"iPad3,1"    : @(SYName_iPad_3),
+                              @"iPad3,2"    : @(SYName_iPad_3),
+                              @"iPad3,3"    : @(SYName_iPad_3),
                               
-                              @"iPad3,4"    : @(SYName_iPad__4),
-                              @"iPad3,5"    : @(SYName_iPad__4),
-                              @"iPad3,6"    : @(SYName_iPad__4),
+                              @"iPad3,4"    : @(SYName_iPad_4),
+                              @"iPad3,5"    : @(SYName_iPad_4),
+                              @"iPad3,6"    : @(SYName_iPad_4),
                               
-                              @"iPad6,11"   : @(SYName_iPad__5),
-                              @"iPad6,12"   : @(SYName_iPad__5),
+                              @"iPad6,11"   : @(SYName_iPad_5),
+                              @"iPad6,12"   : @(SYName_iPad_5),
+                              
+                              @"iPad7,5"   : @(SYName_iPad_6),
+                              @"iPad7,6"   : @(SYName_iPad_6),
+                              
+                              @"iPad7,11"   : @(SYName_iPad_7),
+                              @"iPad7,12"   : @(SYName_iPad_7),
+                              
+                              @"iPad11,6"   : @(SYName_iPad_8),
+                              @"iPad11,7"   : @(SYName_iPad_8),
+                              
+                              @"iPad12,1"   : @(SYName_iPad_9),
+                              @"iPad12,2"   : @(SYName_iPad_9),
                               
                               // iPad Air
                               @"iPad4,1"    : @(SYName_iPad_Air),
                               @"iPad4,2"    : @(SYName_iPad_Air),
                               @"iPad4,3"    : @(SYName_iPad_Air),
-                              @"iPad5,3"    : @(SYName_iPad_Air__2),
-                              @"iPad5,4"    : @(SYName_iPad_Air__2),
+                              @"iPad5,3"    : @(SYName_iPad_Air_2),
+                              @"iPad5,4"    : @(SYName_iPad_Air_2),
+                              @"iPad11,3"   : @(SYName_iPad_Air_3),
+                              @"iPad11,4"   : @(SYName_iPad_Air_3),
+                              @"iPad13,1"   : @(SYName_iPad_Air_4),
+                              @"iPad13,2"   : @(SYName_iPad_Air_4),
+                              @"iPad13,16"  : @(SYName_iPad_Air_5),
+                              @"iPad13,17"  : @(SYName_iPad_Air_5),
                               
                               // iPad mini
                               @"iPad2,5"    : @(SYName_iPad_Mini),
                               @"iPad2,6"    : @(SYName_iPad_Mini),
                               @"iPad2,7"    : @(SYName_iPad_Mini),
                               
-                              @"iPad4,4"    : @(SYName_iPad_Mini__2),
-                              @"iPad4,5"    : @(SYName_iPad_Mini__2),
-                              @"iPad4,6"    : @(SYName_iPad_Mini__2),
+                              @"iPad4,4"    : @(SYName_iPad_Mini_2),
+                              @"iPad4,5"    : @(SYName_iPad_Mini_2),
+                              @"iPad4,6"    : @(SYName_iPad_Mini_2),
                               
-                              @"iPad4,7"    : @(SYName_iPad_Mini__3),
-                              @"iPad4,8"    : @(SYName_iPad_Mini__3),
-                              @"iPad4,9"    : @(SYName_iPad_Mini__3),
+                              @"iPad4,7"    : @(SYName_iPad_Mini_3),
+                              @"iPad4,8"    : @(SYName_iPad_Mini_3),
+                              @"iPad4,9"    : @(SYName_iPad_Mini_3),
                               
-                              @"iPad5,1"    : @(SYName_iPad_Mini__4),
-                              @"iPad5,2"    : @(SYName_iPad_Mini__4),
+                              @"iPad5,1"    : @(SYName_iPad_Mini_4),
+                              @"iPad5,2"    : @(SYName_iPad_Mini_4),
+                              
+                              @"iPad11,1"    : @(SYName_iPad_Mini_5),
+                              @"iPad11,2"    : @(SYName_iPad_Mini_5),
+                              
+                              @"iPad14,1"    : @(SYName_iPad_Mini_6),
+                              @"iPad14,2"    : @(SYName_iPad_Mini_6),
                               
                               // iPad Pro
                               @"iPad6,3"    : @(SYName_iPad_Pro_9_7),
@@ -139,11 +181,37 @@
                               @"iPad7,3"    : @(SYName_iPad_Pro_10_5),
                               @"iPad7,4"    : @(SYName_iPad_Pro_10_5),
                               
+                              @"iPad8,1"    : @(SYName_iPad_Pro_11__1),
+                              @"iPad8,2"    : @(SYName_iPad_Pro_11__1),
+                              @"iPad8,3"    : @(SYName_iPad_Pro_11__1),
+                              @"iPad8,4"    : @(SYName_iPad_Pro_11__1),
+                              
+                              @"iPad8,9"    : @(SYName_iPad_Pro_11__2),
+                              @"iPad8,10"   : @(SYName_iPad_Pro_11__2),
+                              
+                              @"iPad13,4"   : @(SYName_iPad_Pro_11__3),
+                              @"iPad13,5"   : @(SYName_iPad_Pro_11__3),
+                              @"iPad13,6"   : @(SYName_iPad_Pro_11__3),
+                              @"iPad13,7"   : @(SYName_iPad_Pro_11__3),
+                              
                               @"iPad6,7"    : @(SYName_iPad_Pro_12_9),
                               @"iPad6,8"    : @(SYName_iPad_Pro_12_9),
                               
                               @"iPad7,1"    : @(SYName_iPad_Pro_12_9__2),
                               @"iPad7,2"    : @(SYName_iPad_Pro_12_9__2),
+                              
+                              @"iPad8,5"    : @(SYName_iPad_Pro_12_9__3),
+                              @"iPad8,6"    : @(SYName_iPad_Pro_12_9__3),
+                              @"iPad8,7"    : @(SYName_iPad_Pro_12_9__3),
+                              @"iPad8,8"    : @(SYName_iPad_Pro_12_9__3),
+                              
+                              @"iPad8,11"   : @(SYName_iPad_Pro_12_9__4),
+                              @"iPad8,12"   : @(SYName_iPad_Pro_12_9__4),
+                              
+                              @"iPad13,8"   : @(SYName_iPad_Pro_12_9__5),
+                              @"iPad13,9"   : @(SYName_iPad_Pro_12_9__5),
+                              @"iPad13,10"  : @(SYName_iPad_Pro_12_9__5),
+                              @"iPad13,11"  : @(SYName_iPad_Pro_12_9__5),
                               };
     }
     
@@ -172,7 +240,8 @@
              || SYName_iPod__3 == nameType
              || SYName_iPod__4 == nameType
              || SYName_iPod__5 == nameType
-             || SYName_iPod__6 == nameType)
+             || SYName_iPod__6 == nameType
+             || SYName_iPod__7 == nameType)
     {
         deviceType = SYType_iPod;
     }
@@ -200,25 +269,57 @@
              || SYName_iPhone_XR == nameType
              || SYName_iPhone_11 == nameType
              || SYName_iPhone_11_Pro == nameType
-             || SYName_iPhone_11_Pro_Max == nameType)
+             || SYName_iPhone_11_Pro_Max == nameType
+             
+             || SYName_iPhone_SE_2 == nameType
+             || SYName_iPhone_12_mini == nameType
+             || SYName_iPhone_12 == nameType
+             || SYName_iPhone_12_Pro == nameType
+             || SYName_iPhone_12_Pro_Max == nameType
+             
+             || SYName_iPhone_13_mini == nameType
+             || SYName_iPhone_13 == nameType
+             || SYName_iPhone_13_Pro == nameType
+             || SYName_iPhone_13_Pro_Max == nameType
+             
+             || SYName_iPhone_SE_3 == nameType
+             || SYName_iPhone_14 == nameType
+             || SYName_iPhone_14_Plus == nameType
+             || SYName_iPhone_14_Pro == nameType
+             || SYName_iPhone_14_Pro_Max == nameType)
     {
         deviceType = SYType_iPhone;
     }
     else if (SYName_iPad == nameType
-             || SYName_iPad__2 == nameType
-             || SYName_iPad__3 == nameType
-             || SYName_iPad__4 == nameType
-             || SYName_iPad__5 == nameType
+             || SYName_iPad_2 == nameType
+             || SYName_iPad_3 == nameType
+             || SYName_iPad_4 == nameType
+             || SYName_iPad_5 == nameType
+             || SYName_iPad_6 == nameType
+             || SYName_iPad_7 == nameType
+             || SYName_iPad_8 == nameType
+             || SYName_iPad_9 == nameType
              || SYName_iPad_Air == nameType
-             || SYName_iPad_Air__2 == nameType
+             || SYName_iPad_Air_2 == nameType
+             || SYName_iPad_Air_3 == nameType
+             || SYName_iPad_Air_4 == nameType
+             || SYName_iPad_Air_5 == nameType
              || SYName_iPad_Mini == nameType
-             || SYName_iPad_Mini__2 == nameType
-             || SYName_iPad_Mini__3 == nameType
-             || SYName_iPad_Mini__4 == nameType
+             || SYName_iPad_Mini_2 == nameType
+             || SYName_iPad_Mini_3 == nameType
+             || SYName_iPad_Mini_4 == nameType
+             || SYName_iPad_Mini_5 == nameType
+             || SYName_iPad_Mini_6 == nameType
              || SYName_iPad_Pro_9_7 == nameType
              || SYName_iPad_Pro_10_5 == nameType
+             || SYName_iPad_Pro_11__1 == nameType
+             || SYName_iPad_Pro_11__2 == nameType
+             || SYName_iPad_Pro_11__3 == nameType
              || SYName_iPad_Pro_12_9 == nameType
-             || SYName_iPad_Pro_12_9__2 == nameType)
+             || SYName_iPad_Pro_12_9__2 == nameType
+             || SYName_iPad_Pro_12_9__3 == nameType
+             || SYName_iPad_Pro_12_9__4 == nameType
+             || SYName_iPad_Pro_12_9__5 == nameType)
     {
         deviceType = SYType_iPad;
     }
@@ -235,14 +336,15 @@
     SYNameType nameType = [self syDeviceName];
     
     if (SYName_iPod == nameType
-        || SYName_iPad__2 == nameType
-        || SYName_iPad__3 == nameType
-        || SYName_iPad__4 == nameType)
+        || SYName_iPad_2 == nameType
+        || SYName_iPad_3 == nameType
+        || SYName_iPad_4 == nameType)
     {
         screenSize = SYScreen_iPod_3_5;
     }
     else if (SYName_iPod__5 == nameType
-             || SYName_iPod__6 == nameType)
+             || SYName_iPod__6 == nameType
+             || SYName_iPod__7 == nameType)
     {
         screenSize = SYScreen_iPod_4_0;
     }
@@ -267,10 +369,17 @@
     {
         screenSize = SYScreen_iPhone_4_7;
     }
+    else if (SYName_iPhone_12_mini == nameType
+             || SYName_iPhone_13_mini == nameType)
+    {
+        screenSize = SYScreen_iPhone_5_4;
+    }
     else if (SYName_iPhone_6_Plus == nameType
              || SYName_iPhone_6S_Plus == nameType
              || SYName_iPhone_7_Plus == nameType
-             || SYName_iPhone_8_Plus == nameType)
+             || SYName_iPhone_8_Plus == nameType
+             || SYName_iPhone_SE_2 == nameType
+             || SYName_iPhone_SE_3 == nameType)
     {
         screenSize = SYScreen_iPhone_5_5;
     }
@@ -281,7 +390,13 @@
         screenSize = SYScreen_iPhone_5_8;
     }
     else if (SYName_iPhone_XR == nameType
-             || SYName_iPhone_11 == nameType)
+             || SYName_iPhone_11 == nameType
+             || SYName_iPhone_12 == nameType
+             || SYName_iPhone_12_Pro == nameType
+             || SYName_iPhone_13 == nameType
+             || SYName_iPhone_13_Pro == nameType
+             || SYName_iPhone_14 == nameType
+             || SYName_iPhone_14_Pro == nameType)
     {
         screenSize = SYScreen_iPhone_6_1;
     }
@@ -290,30 +405,64 @@
     {
         screenSize = SYScreen_iPhone_6_5;
     }
+    else if (SYName_iPhone_12_Pro_Max == nameType
+             || SYName_iPhone_13_Pro_Max == nameType
+             || SYName_iPhone_14_Plus == nameType
+             || SYName_iPhone_14_Pro_Max == nameType)
+    {
+        screenSize = SYScreen_iPhone_6_7;
+    }
     else if (SYName_iPad_Mini == nameType
-             || SYName_iPad_Mini__2 == nameType
-             || SYName_iPad_Mini__3 == nameType
-             || SYName_iPad_Mini__4 == nameType)
+             || SYName_iPad_Mini_2 == nameType
+             || SYName_iPad_Mini_3 == nameType
+             || SYName_iPad_Mini_4 == nameType
+             || SYName_iPad_Mini_5 == nameType)
     {
         screenSize = SYScreen_iPad_7_9;
     }
+    else if (SYName_iPad_Mini_6 == nameType)
+    {
+        screenSize = SYScreen_iPad_8_3;
+    }
     else if (SYName_iPad == nameType
-             || SYName_iPad__2 == nameType
-             || SYName_iPad__3 == nameType
-             || SYName_iPad__4 == nameType
-             || SYName_iPad__5 == nameType
+             || SYName_iPad_2 == nameType
+             || SYName_iPad_3 == nameType
+             || SYName_iPad_4 == nameType
+             || SYName_iPad_5 == nameType
+             || SYName_iPad_6 == nameType
              || SYName_iPad_Air == nameType
-             || SYName_iPad_Air__2 == nameType
+             || SYName_iPad_Air_2 == nameType
              || SYName_iPad_Pro_9_7 == nameType)
     {
         screenSize = SYScreen_iPad_9_7;
     }
-    else if (SYName_iPad_Pro_10_5 == nameType)
+    else if (SYName_iPad_7 == nameType
+             || SYName_iPad_8 == nameType
+             || SYName_iPad_9 == nameType)
+    {
+        screenSize = SYScreen_iPad_10_2;
+    }
+    else if (SYName_iPad_Pro_10_5 == nameType
+             || SYName_iPad_Air_3 == nameType)
     {
         screenSize = SYScreen_iPad_10_5;
     }
+    else if (SYName_iPad_Pro_11__1 == nameType
+             || SYName_iPad_Pro_11__2 == nameType
+             || SYName_iPad_Pro_11__3 == nameType)
+    {
+        screenSize = SYScreen_iPad_11;
+    }
+    else if (SYName_iPad_Air_4 == nameType
+             || SYName_iPad_Air_5 == nameType)
+    {
+        screenSize = SYScreen_iPad_10_9;
+    }
     else if (SYName_iPad_Pro_12_9 == nameType
-             || SYName_iPad_Pro_12_9__2 == nameType)
+             || SYName_iPad_Pro_12_9__2 == nameType
+             || SYName_iPad_Pro_12_9__3 == nameType
+             || SYName_iPad_Pro_12_9__4 == nameType
+             || SYName_iPad_Pro_12_9__5 == nameType)
     {
         screenSize = SYScreen_iPad_12_9;
     }
@@ -689,6 +838,10 @@
     {
         return @"iPod touch 6";
     }
+    else if ([@"iPod9,1" isEqualToString:code])
+    {
+        return @"iPod touch 7";
+    }
     // iPhone
     else if ([@"iPhone1,1" isEqualToString:code])
     {
@@ -742,6 +895,14 @@
     {
         return @"iPhone SE";
     }
+    else if ([@"iPhone12,8" isEqualToString:code])
+    {
+        return @"iPhone SE 2";
+    }
+    else if ([@"iPhone14,6" isEqualToString:code])
+    {
+        return @"iPhone SE 3";
+    }
     else if ([@"iPhone9,1" isEqualToString:code] || [@"iPhone9,3" isEqualToString:code])
     {
         return @"iPhone 7";
@@ -774,6 +935,68 @@
     {
         return @"iPhone XR";
     }
+    else if ([@"iPhone12,1" isEqualToString:code])
+    {
+        return @"iPhone 11";
+    }
+    else if ([@"iPhone12,2" isEqualToString:code])
+    {
+        return @"iPhone 11 Pro";
+    }
+    else if ([@"iPhone12,3" isEqualToString:code])
+    {
+        return @"iPhone 11 Pro Max";
+    }
+    else if ([@"iPhone13,1" isEqualToString:code])
+    {
+        return @"iPhone 12 mini";
+    }
+    else if ([@"iPhone13,2" isEqualToString:code])
+    {
+        return @"iPhone 12";
+    }
+    else if ([@"iPhone13,3" isEqualToString:code])
+    {
+        return @"iPhone 12 Pro";
+    }
+    else if ([@"iPhone13,4" isEqualToString:code])
+    {
+        return @"iPhone 12 Pro Max";
+    }
+    
+    else if ([@"iPhone14,4" isEqualToString:code])
+    {
+        return @"iPhone 13_mini";
+    }
+    else if ([@"iPhone14,5" isEqualToString:code])
+    {
+        return @"iPhone 13";
+    }
+    else if ([@"iPhone14,2" isEqualToString:code])
+    {
+        return @"iPhone 13 Pro";
+    }
+    else if ([@"iPhone14,3" isEqualToString:code])
+    {
+        return @"iPhone 13 Pro Max";
+    }
+    else if ([@"iPhone14,7" isEqualToString:code])
+    {
+        return @"iPhone 14";
+    }
+    else if ([@"iPhone14,8" isEqualToString:code])
+    {
+        return @"iPhone 14 Plus";
+    }
+    else if ([@"iPhone15,2" isEqualToString:code])
+    {
+        return @"iPhone 14 Pro";
+    }
+    else if ([@"iPhone15,3" isEqualToString:code])
+    {
+        return @"iPhone 14 Pro Max";
+    }
+    
     // iPad
     else if ([@"iPad1,1" isEqualToString:code])
     {
@@ -796,6 +1019,22 @@
     {
         return @"iPad 5";
     }
+    else if ([@"iPad7,5" isEqualToString:code] || [@"iPad7,6" isEqualToString:code])
+    {
+        return @"iPad 6";
+    }
+    else if ([@"iPad7,11" isEqualToString:code] || [@"iPad7,12" isEqualToString:code])
+    {
+        return @"iPad 7";
+    }
+    else if ([@"iPad11,6" isEqualToString:code] || [@"iPad11,7" isEqualToString:code])
+    {
+        return @"iPad 8";
+    }
+    else if ([@"iPad12,1" isEqualToString:code] || [@"iPad12,2" isEqualToString:code])
+    {
+        return @"iPad 9";
+    }
     // iPad Air
     else if ([@"iPad4,1" isEqualToString:code] || [@"iPad4,2" isEqualToString:code] || [@"iPad4,3" isEqualToString:code])
     {
@@ -804,6 +1043,18 @@
     else if ([@"iPad5,3" isEqualToString:code] || [@"iPad5,4" isEqualToString:code])
     {
         return @"iPad Air 2";
+    }
+    else if ([@"iPad11,3" isEqualToString:code] || [@"iPad11,4" isEqualToString:code])
+    {
+        return @"iPad Air 3";
+    }
+    else if ([@"iPad13,1" isEqualToString:code] || [@"iPad13,2" isEqualToString:code])
+    {
+        return @"iPad Air 4";
+    }
+    else if ([@"iPad13,16" isEqualToString:code] || [@"iPad13,17" isEqualToString:code])
+    {
+        return @"iPad Air 5";
     }
     // iPad mini
     else if ([@"iPad2,5" isEqualToString:code] || [@"iPad2,6" isEqualToString:code] || [@"iPad2,7" isEqualToString:code])
@@ -822,15 +1073,40 @@
     {
         return @"iPad mini 4";
     }
-    // iPad Pro
+    else if ([@"iPad11,1" isEqualToString:code] || [@"iPad11,2" isEqualToString:code])
+    {
+        return @"iPad mini 5";
+    }
+    else if ([@"iPad14,1" isEqualToString:code] || [@"iPad14,2" isEqualToString:code])
+    {
+        return @"iPad mini 6";
+    }
+    // iPad Pro-9.7
     else if ([@"iPad6,3" isEqualToString:code] || [@"iPad6,4" isEqualToString:code])
     {
         return @"iPad Pro (9.7-inch)";
     }
+    // iPad Pro 10.5
     else if ([@"iPad7,3" isEqualToString:code] || [@"iPad7,4" isEqualToString:code])
     {
         return @"iPad Pro (10.5-inch)";
     }
+    // iPad Pro 11
+    else if ([@"iPad8,1" isEqualToString:code] || [@"iPad8,2" isEqualToString:code]
+             || [@"iPad8,3" isEqualToString:code] || [@"iPad8,4" isEqualToString:code])
+    {
+        return @"iPad Pro (11-inch)";
+    }
+    else if ([@"iPad8,9" isEqualToString:code] || [@"iPad8,10" isEqualToString:code])
+    {
+        return @"iPad Pro (11-inch) 2";
+    }
+    else if ([@"iPad13,4" isEqualToString:code] || [@"iPad13,5" isEqualToString:code]
+             || [@"iPad13,6" isEqualToString:code] || [@"iPad13,7" isEqualToString:code])
+    {
+        return @"iPad Pro (11-inch) 3";
+    }
+    // iPad Pro 12.9
     else if ([@"iPad6,7" isEqualToString:code] || [@"iPad6,8" isEqualToString:code])
     {
         return @"iPad Pro (12.9-inch)";
@@ -838,6 +1114,20 @@
     else if ([@"iPad7,1" isEqualToString:code] || [@"iPad7,2" isEqualToString:code])
     {
         return @"iPad Pro (12.9-inch) 2";
+    }
+    else if ([@"iPad8,5" isEqualToString:code] || [@"iPad8,6" isEqualToString:code]
+             || [@"iPad8,7" isEqualToString:code] || [@"iPad8,8" isEqualToString:code])
+    {
+        return @"iPad Pro (12.9-inch) 3";
+    }
+    else if ([@"iPad8,11" isEqualToString:code] || [@"iPad8,12" isEqualToString:code])
+    {
+        return @"iPad Pro (12.9-inch) 4";
+    }
+    else if ([@"iPad13,8" isEqualToString:code] || [@"iPad13,9" isEqualToString:code]
+             || [@"iPad13,10" isEqualToString:code] || [@"iPad13,11" isEqualToString:code])
+    {
+        return @"iPad Pro (12.9-inch) 5";
     }
     return @"Unknow";
 }

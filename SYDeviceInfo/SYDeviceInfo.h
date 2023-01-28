@@ -20,6 +20,7 @@ typedef NS_ENUM(NSUInteger, SYNameType) {
     SYName_iPod__4                  = 0x0013,                   // iPod touch (4th generation)
     SYName_iPod__5                  = 0x0014,                   // iPod touch (5th generation)
     SYName_iPod__6                  = 0x0015,                   // iPod touch (6th generation)
+    SYName_iPod__7                  = 0x0016,                   // iPod touch (7th generation)
     
     SYName_iPhone                   = 0x0100,                   // iPhone
     SYName_iPhone_3G                = 0x0101,                   // iPhone 3G
@@ -45,27 +46,57 @@ typedef NS_ENUM(NSUInteger, SYNameType) {
     SYName_iPhone_11                = 0x0115,                   // iPhone 11
     SYName_iPhone_11_Pro            = 0x0116,                   // iPhone 11 Pro
     SYName_iPhone_11_Pro_Max        = 0x0117,                   // iPhone 11 Pro Max
+    SYName_iPhone_SE_2              = 0x0118,                   // iPhone SE 3th (2020)
+    SYName_iPhone_12_mini           = 0x0119,                   // iPhone 12 mini
+    SYName_iPhone_12                = 0x011A,                   // iPhone 12
+    SYName_iPhone_12_Pro            = 0x011B,                   // iPhone 12 Pro
+    SYName_iPhone_12_Pro_Max        = 0x011C,                   // iPhone 12 Pro Max
+    SYName_iPhone_13_mini           = 0x011D,                   // iPhone 13 mini
+    SYName_iPhone_13                = 0x011E,                   // iPhone 13
+    SYName_iPhone_13_Pro            = 0x011F,                   // iPhone 13 Pro
+    SYName_iPhone_13_Pro_Max        = 0x0120,                   // iPhone 13 Pro Max
+    SYName_iPhone_SE_3              = 0x0121,                   // iPhone SE 3 (2022)
+    SYName_iPhone_14                = 0x0122,                   // iPhone 14
+    SYName_iPhone_14_Plus           = 0x0123,                   // iPhone 14 Plus
+    SYName_iPhone_14_Pro            = 0x0124,                   // iPhone 14 Pro
+    SYName_iPhone_14_Pro_Max        = 0x0125,                   // iPhone 14 Pro Max
     
     SYName_iPad                     = 0x0200,                   // iPad
-    SYName_iPad__2                  = 0x0201,                   // iPad 2
-    SYName_iPad__3                  = 0x0202,                   // iPad (3rd generation)
-    SYName_iPad__4                  = 0x0203,                   // iPad (4th generation)
-    SYName_iPad__5                  = 0x0204,                   // iPad (5th generation)
+    SYName_iPad_2                   = 0x0201,                   // iPad 2
+    SYName_iPad_3                   = 0x0202,                   // iPad (3rd generation)
+    SYName_iPad_4                   = 0x0203,                   // iPad (4th generation)
+    SYName_iPad_5                   = 0x0204,                   // iPad (5th generation)
+    SYName_iPad_6                   = 0x0205,                   // iPad (6th generation)
+    SYName_iPad_7                   = 0x0206,                   // iPad (7th generation)
+    SYName_iPad_8                   = 0x0207,                   // iPad (8th generation)
+    SYName_iPad_9                   = 0x0208,                   // iPad (9th generation)
     
     SYName_iPad_Air                 = 0x0300,                   // iPad Air
-    SYName_iPad_Air__2              = 0x0301,                   // iPad Air 2
+    SYName_iPad_Air_2               = 0x0301,                   // iPad Air 2
+    SYName_iPad_Air_3               = 0x0302,                   // iPad Air 3
+    SYName_iPad_Air_4               = 0x0303,                   // iPad Air 4
+    SYName_iPad_Air_5               = 0x0304,                   // iPad Air 5
     
     SYName_iPad_Mini                = 0x0400,                   // iPad mini
-    SYName_iPad_Mini__2             = 0x0401,                   // iPad mini 2
-    SYName_iPad_Mini__3             = 0x0402,                   // iPad mini 3
-    SYName_iPad_Mini__4             = 0x0403,                   // iPad mini 4
+    SYName_iPad_Mini_2              = 0x0401,                   // iPad mini 2
+    SYName_iPad_Mini_3              = 0x0402,                   // iPad mini 3
+    SYName_iPad_Mini_4              = 0x0403,                   // iPad mini 4
+    SYName_iPad_Mini_5              = 0x0404,                   // iPad mini 5
+    SYName_iPad_Mini_6              = 0x0405,                   // iPad mini 6
     
     SYName_iPad_Pro_9_7             = 0x0500,                   // iPad Pro (9.7-inch)
     
     SYName_iPad_Pro_10_5            = 0x0600,                   // iPad Pro (10.5-inch)
     
+    SYName_iPad_Pro_11__1           = 0x0800,                   // iPad Pro (11-inch)
+    SYName_iPad_Pro_11__2           = 0x0801,                   // iPad Pro (11-inch, 2nd generation)
+    SYName_iPad_Pro_11__3           = 0x0802,                   // iPad Pro (11-inch, 3rd generation)
+    
     SYName_iPad_Pro_12_9            = 0x0700,                   // iPad Pro (12.9-inch)
     SYName_iPad_Pro_12_9__2         = 0x0701,                   // iPad Pro (12.9-inch, 2nd generation)
+    SYName_iPad_Pro_12_9__3         = 0x0702,                   // iPad Pro (12.9-inch, 3rd generation)
+    SYName_iPad_Pro_12_9__4         = 0x0703,                   // iPad Pro (12.9-inch, 4th generation)
+    SYName_iPad_Pro_12_9__5         = 0x0704,                   // iPad Pro (12.9-inch, 5th generation)
 };
 
 
@@ -88,15 +119,21 @@ typedef NS_ENUM(NSUInteger, SYScreenType) {
     SYScreen_iPhone_3_5             = 0x10,                     // iPhone (3.5-inch)
     SYScreen_iPhone_4_0             = 0x11,                     // iPhone (4.0-inch)
     SYScreen_iPhone_4_7             = 0x12,                     // iPhone (4.7-inch)
-    SYScreen_iPhone_5_5             = 0x13,                     // iPhone (5.5-inch)
-    SYScreen_iPhone_5_8             = 0x14,                     // iPhone (5.8-inch)
-    SYScreen_iPhone_6_1             = 0x15,                     // iPhone (6.1-inch)
-    SYScreen_iPhone_6_5             = 0x16,                     // iPhone (6.5-inch)
+    SYScreen_iPhone_5_4             = 0x13,                     // iPhone (5.4-inch)
+    SYScreen_iPhone_5_5             = 0x14,                     // iPhone (5.5-inch)
+    SYScreen_iPhone_5_8             = 0x15,                     // iPhone (5.8-inch)
+    SYScreen_iPhone_6_1             = 0x16,                     // iPhone (6.1-inch)
+    SYScreen_iPhone_6_5             = 0x17,                     // iPhone (6.5-inch)
+    SYScreen_iPhone_6_7             = 0x18,                     // iPhone (6.7-inch)
     
     SYScreen_iPad_7_9               = 0x20,                     // iPad mini (7.9-inch)
-    SYScreen_iPad_9_7               = 0x21,                     // iPad 、iPad Air (9.7-inch)
-    SYScreen_iPad_10_5              = 0x22,                     // iPad Pro (10.5-inch)
-    SYScreen_iPad_12_9              = 0x23,                     // iPad Pro (12.9-inch)
+    SYScreen_iPad_8_3               = 0x21,                     // iPad mini (8.3-inch)
+    SYScreen_iPad_9_7               = 0x22,                     // iPad 、iPad Air (9.7-inch)
+    SYScreen_iPad_10_2              = 0x23,                     // iPad (10.2-inch)
+    SYScreen_iPad_10_5              = 0x24,                     // iPad Pro (10.5-inch)
+    SYScreen_iPad_10_9              = 0x25,                     // iPad Pro (10.9-inch)
+    SYScreen_iPad_11                = 0x26,                     // iPad Pro (11-inch)
+    SYScreen_iPad_12_9              = 0x27,                     // iPad Pro (12.9-inch)
 };
 
 

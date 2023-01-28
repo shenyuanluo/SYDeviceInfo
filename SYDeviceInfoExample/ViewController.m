@@ -410,6 +410,10 @@
             devNameStr = @"iPod 6";
             break;
             
+        case SYName_iPod__7:
+            devNameStr = @"iPod 7";
+            break;
+            
         case SYName_iPhone:
             devNameStr = @"iPhone";
             break;
@@ -486,44 +490,81 @@
             devNameStr = @"iPad";
             break;
             
-        case SYName_iPad__2:
+        case SYName_iPad_2:
             devNameStr = @"iPad 2";
             break;
             
-        case SYName_iPad__3:
+        case SYName_iPad_3:
             devNameStr = @"iPad 3";
             break;
             
-        case SYName_iPad__4:
+        case SYName_iPad_4:
             devNameStr = @"iPad 4";
             break;
             
-        case SYName_iPad__5:
+        case SYName_iPad_5:
             devNameStr = @"iPad 5";
+            break;
+            
+        case SYName_iPad_6:
+            devNameStr = @"iPad 6";
+            break;
+            
+            
+        case SYName_iPad_7:
+            devNameStr = @"iPad 7";
+            break;
+            
+        case SYName_iPad_8:
+            devNameStr = @"iPad 8";
+            break;
+            
+        case SYName_iPad_9:
+            devNameStr = @"iPad 9";
             break;
             
         case SYName_iPad_Air:
             devNameStr = @"Air";
             break;
             
-        case SYName_iPad_Air__2:
+        case SYName_iPad_Air_2:
             devNameStr = @"iPad Air 2";
+            break;
+            
+        case SYName_iPad_Air_3:
+            devNameStr = @"iPad Air 3";
+            break;
+            
+        case SYName_iPad_Air_4:
+            devNameStr = @"iPad Air 4";
+            break;
+            
+        case SYName_iPad_Air_5:
+            devNameStr = @"iPad Air 5";
             break;
             
         case SYName_iPad_Mini:
             devNameStr = @"iPad Mini";
             break;
             
-        case SYName_iPad_Mini__2:
+        case SYName_iPad_Mini_2:
             devNameStr = @"iPad Mini 2";
             break;
             
-        case SYName_iPad_Mini__3:
+        case SYName_iPad_Mini_3:
             devNameStr = @"iPad Mini 3";
             break;
             
-        case SYName_iPad_Mini__4:
+        case SYName_iPad_Mini_4:
             devNameStr = @"iPad Mini 4";
+            break;
+            
+        case SYName_iPad_Mini_5:
+            devNameStr = @"iPad Mini 5";
+            break;
+            
+        case SYName_iPad_Mini_6:
+            devNameStr = @"iPad Mini 6";
             break;
             
         case SYName_iPad_Pro_9_7:
