@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-/** 设备版本号枚举 */
+/** 设备版本号枚举，详细列表参见：https://www.theiphonewiki.com/wiki/Models */
 typedef NS_ENUM(NSUInteger, SYNameType) {
     SYName_Unknow                   = 0x0000,                   // Unknow type
     SYName_Simulator                = 0x0001,                   // Simulator
@@ -25,32 +25,32 @@ typedef NS_ENUM(NSUInteger, SYNameType) {
     SYName_iPhone                   = 0x0100,                   // iPhone
     SYName_iPhone_3G                = 0x0101,                   // iPhone 3G
     SYName_iPhone_3GS               = 0x0102,                   // iPhone 3GS
-    SYName_iPhone_4                 = 0x0103,                   // iPhone 4
-    SYName_iPhone_4S                = 0x0104,                   // iPhone 4S
-    SYName_iPhone_5                 = 0x0105,                   // iPhone 5
-    SYName_iPhone_5C                = 0x0106,                   // iPhone 5c
-    SYName_iPhone_5S                = 0x0107,                   // iPhone 5S
-    SYName_iPhone_6                 = 0x0108,                   // iPhone 6
-    SYName_iPhone_6_Plus            = 0x0109,                   // iPhone 6 Plus
-    SYName_iPhone_6S                = 0x010A,                   // iPhone 6S
-    SYName_iPhone_6S_Plus           = 0x010B,                   // iPhone 6S Plus
-    SYName_iPhone_SE                = 0x010C,                   // iPhone SE
-    SYName_iPhone_7                 = 0x010D,                   // iPhone 7
-    SYName_iPhone_7_Plus            = 0x010E,                   // iPhone 7 Plus
-    SYName_iPhone_8                 = 0x010F,                   // iPhone 8
-    SYName_iPhone_8_Plus            = 0x0110,                   // iPhone 8 Plus
-    SYName_iPhone_X                 = 0x0111,                   // iPhone X
-    SYName_iPhone_XS                = 0x0112,                   // iPhone XS
-    SYName_iPhone_XS_Max            = 0x0113,                   // iPhone XS Max
-    SYName_iPhone_XR                = 0x0114,                   // iPhone XR
-    SYName_iPhone_11                = 0x0115,                   // iPhone 11
-    SYName_iPhone_11_Pro            = 0x0116,                   // iPhone 11 Pro
-    SYName_iPhone_11_Pro_Max        = 0x0117,                   // iPhone 11 Pro Max
+    SYName_iPhone_4                 = 0x0103,                   // iPhone 4             (3.5-inch)
+    SYName_iPhone_4S                = 0x0104,                   // iPhone 4S            (3.5-inch)
+    SYName_iPhone_5                 = 0x0105,                   // iPhone 5             (4.0-inch)
+    SYName_iPhone_5C                = 0x0106,                   // iPhone 5c            (4.0-inch)
+    SYName_iPhone_5S                = 0x0107,                   // iPhone 5S            (4.0-inch)
+    SYName_iPhone_6                 = 0x0108,                   // iPhone 6             (4.7-inch)
+    SYName_iPhone_6_Plus            = 0x0109,                   // iPhone 6 Plus        (5.5-inch)
+    SYName_iPhone_6S                = 0x010A,                   // iPhone 6S            (4.7-inch)
+    SYName_iPhone_6S_Plus           = 0x010B,                   // iPhone 6S Plus       (5.5-inch)
+    SYName_iPhone_SE                = 0x010C,                   // iPhone SE            (4.0-inch)
+    SYName_iPhone_7                 = 0x010D,                   // iPhone 7             (4.7-inch)
+    SYName_iPhone_7_Plus            = 0x010E,                   // iPhone 7 Plus        (5.5-inch)
+    SYName_iPhone_8                 = 0x010F,                   // iPhone 8             (4.7-inch)
+    SYName_iPhone_8_Plus            = 0x0110,                   // iPhone 8 Plus        (5.5-inch)
+    SYName_iPhone_X                 = 0x0111,                   // iPhone X             (5.8-inch)
+    SYName_iPhone_XS                = 0x0112,                   // iPhone XS            (5.8-inch)
+    SYName_iPhone_XS_Max            = 0x0113,                   // iPhone XS Max        (6.5-inch)
+    SYName_iPhone_XR                = 0x0114,                   // iPhone XR            (6.1-inch)
+    SYName_iPhone_11                = 0x0115,                   // iPhone 11            (6.1-inch)
+    SYName_iPhone_11_Pro            = 0x0116,                   // iPhone 11 Pro        (5.8-inch)
+    SYName_iPhone_11_Pro_Max        = 0x0117,                   // iPhone 11 Pro Max    (6.5-inch)
     SYName_iPhone_SE_2              = 0x0118,                   // iPhone SE 3th (2020)
-    SYName_iPhone_12_mini           = 0x0119,                   // iPhone 12 mini
-    SYName_iPhone_12                = 0x011A,                   // iPhone 12
-    SYName_iPhone_12_Pro            = 0x011B,                   // iPhone 12 Pro
-    SYName_iPhone_12_Pro_Max        = 0x011C,                   // iPhone 12 Pro Max
+    SYName_iPhone_12_mini           = 0x0119,                   // iPhone 12 mini       (5.4-inch)
+    SYName_iPhone_12                = 0x011A,                   // iPhone 12            (6.1-inch)
+    SYName_iPhone_12_Pro            = 0x011B,                   // iPhone 12 Pro        (5.8-inch)
+    SYName_iPhone_12_Pro_Max        = 0x011C,                   // iPhone 12 Pro Max    (6.5-inch)
     SYName_iPhone_13_mini           = 0x011D,                   // iPhone 13 mini
     SYName_iPhone_13                = 0x011E,                   // iPhone 13
     SYName_iPhone_13_Pro            = 0x011F,                   // iPhone 13 Pro
@@ -88,15 +88,15 @@ typedef NS_ENUM(NSUInteger, SYNameType) {
     
     SYName_iPad_Pro_10_5            = 0x0600,                   // iPad Pro (10.5-inch)
     
-    SYName_iPad_Pro_11__1           = 0x0800,                   // iPad Pro (11-inch)
-    SYName_iPad_Pro_11__2           = 0x0801,                   // iPad Pro (11-inch, 2nd generation)
-    SYName_iPad_Pro_11__3           = 0x0802,                   // iPad Pro (11-inch, 3rd generation)
+    SYName_iPad_Pro_11__1           = 0x0700,                   // iPad Pro (11-inch)
+    SYName_iPad_Pro_11__2           = 0x0701,                   // iPad Pro (11-inch, 2nd generation)
+    SYName_iPad_Pro_11__3           = 0x0702,                   // iPad Pro (11-inch, 3rd generation)
     
-    SYName_iPad_Pro_12_9            = 0x0700,                   // iPad Pro (12.9-inch)
-    SYName_iPad_Pro_12_9__2         = 0x0701,                   // iPad Pro (12.9-inch, 2nd generation)
-    SYName_iPad_Pro_12_9__3         = 0x0702,                   // iPad Pro (12.9-inch, 3rd generation)
-    SYName_iPad_Pro_12_9__4         = 0x0703,                   // iPad Pro (12.9-inch, 4th generation)
-    SYName_iPad_Pro_12_9__5         = 0x0704,                   // iPad Pro (12.9-inch, 5th generation)
+    SYName_iPad_Pro_12_9            = 0x0800,                   // iPad Pro (12.9-inch)
+    SYName_iPad_Pro_12_9__2         = 0x0801,                   // iPad Pro (12.9-inch, 2nd generation)
+    SYName_iPad_Pro_12_9__3         = 0x0802,                   // iPad Pro (12.9-inch, 3rd generation)
+    SYName_iPad_Pro_12_9__4         = 0x0803,                   // iPad Pro (12.9-inch, 4th generation)
+    SYName_iPad_Pro_12_9__5         = 0x0804,                   // iPad Pro (12.9-inch, 5th generation)
 };
 
 
@@ -147,13 +147,15 @@ typedef NS_ENUM(NSUInteger, SYBatteryState) {
 
 /** iOS 设备当前系统语言 详细列表参见：https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes */
 typedef NS_ENUM(NSInteger, LanguageType) {
-    Language_Chinese        = 0,    // 中文
-    Language_English        = 1,    // 英语
-    Language_Japanese       = 2,    // 日语
-    Language_German         = 3,    // 德语
-    Language_French         = 4,    // 法语
-    Language_Spanish        = 5,    // 西班牙语
-    Language_Korean         = 6,    // 韩语
+    Language_Chinese        = 0,    // 简体中文
+    Language_Hongkong       = 1,    // 繁体中文
+    Language_English        = 2,    // 英语
+    Language_Japanese       = 3,    // 日语
+    Language_Korean         = 4,    // 韩语
+    Language_German         = 5,    // 德语
+    Language_French         = 6,    // 法语
+    Language_Italy          = 7,    // 意大利
+    Language_Spanish        = 8,    // 西班牙语
 };
 
 
@@ -235,6 +237,13 @@ typedef NS_ENUM(NSInteger, LanguageType) {
  return 状态栏高度
  */
 + (CGFloat)syStatusAndNavBarHeight;
+
+/**
+ 获取’顶部‘安全区高度
+ 
+ return 安全区域高度
+ */
++ (CGFloat)syTopSafeAreaHeight;
 
 /**
  获取底部安全区域高度

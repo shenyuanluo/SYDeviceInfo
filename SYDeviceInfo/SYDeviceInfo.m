@@ -365,7 +365,9 @@
     else if (SYName_iPhone_6 == nameType
              || SYName_iPhone_6S == nameType
              || SYName_iPhone_7 == nameType
-             || SYName_iPhone_8 == nameType)
+             || SYName_iPhone_8 == nameType
+             || SYName_iPhone_SE_2 == nameType
+             || SYName_iPhone_SE_3 == nameType)
     {
         screenSize = SYScreen_iPhone_4_7;
     }
@@ -377,9 +379,7 @@
     else if (SYName_iPhone_6_Plus == nameType
              || SYName_iPhone_6S_Plus == nameType
              || SYName_iPhone_7_Plus == nameType
-             || SYName_iPhone_8_Plus == nameType
-             || SYName_iPhone_SE_2 == nameType
-             || SYName_iPhone_SE_3 == nameType)
+             || SYName_iPhone_8_Plus == nameType)
     {
         screenSize = SYScreen_iPhone_5_5;
     }
@@ -447,16 +447,16 @@
     {
         screenSize = SYScreen_iPad_10_5;
     }
+    else if (SYName_iPad_Air_4 == nameType
+             || SYName_iPad_Air_5 == nameType)
+    {
+        screenSize = SYScreen_iPad_10_9;
+    }
     else if (SYName_iPad_Pro_11__1 == nameType
              || SYName_iPad_Pro_11__2 == nameType
              || SYName_iPad_Pro_11__3 == nameType)
     {
         screenSize = SYScreen_iPad_11;
-    }
-    else if (SYName_iPad_Air_4 == nameType
-             || SYName_iPad_Air_5 == nameType)
-    {
-        screenSize = SYScreen_iPad_10_9;
     }
     else if (SYName_iPad_Pro_12_9 == nameType
              || SYName_iPad_Pro_12_9__2 == nameType
@@ -501,33 +501,11 @@
 #pragma mark -- 获取状态栏高度
 + (CGFloat)syStatusBarHeight
 {
-    CGFloat statusBarHeight;
-    SYScreenType screenType = [self syScreenType];
-    switch (screenType)
+    if (@available(iOS 13.0, *))
     {
-        case SYScreen_iPhone_4_0:
-        case SYScreen_iPhone_4_7:
-        case SYScreen_iPhone_5_5:
-        {
-            statusBarHeight = 20.0f;
-        }
-            break;
-            
-        case SYScreen_iPhone_5_8:
-        case SYScreen_iPhone_6_1:
-        case SYScreen_iPhone_6_5:
-        {
-            statusBarHeight = 44.0f;
-        }
-            break;
-            
-        default:
-        {
-            statusBarHeight = 20.0f;
-        }
-            break;
+        return [UIApplication sharedApplication].windows.firstObject.windowScene.statusBarManager.statusBarFrame.size.height;
     }
-    return statusBarHeight;
+    return [UIApplication sharedApplication].statusBarFrame.size.height;
 }
 
 #pragma mark -- 获取设备导航栏高度
@@ -542,36 +520,44 @@
     return [self syStatusBarHeight] + [self syNavigationBarHeight];
 }
 
+#pragma mark -- 获取’顶部‘安全区高度
++ (CGFloat)syTopSafeAreaHeight
+{
+    CGFloat top = 0;
+    UIWindow *window = [UIApplication sharedApplication].windows.firstObject;
+    if (false == window.isKeyWindow)
+    {
+        UIWindow *keyWindow = [UIApplication sharedApplication].delegate.window;
+        if (nil != keyWindow && CGRectEqualToRect(keyWindow.bounds, UIScreen.mainScreen.bounds))
+        {
+            window = keyWindow;
+        }
+    }
+    if (@available(iOS 11.0, *))
+    {
+        top = window.safeAreaInsets.top;
+    }
+    return top;
+}
+
 #pragma mark -- 获取底部安全区域高度
 + (CGFloat)syBottomSafeAreaHeight
 {
-    CGFloat safeAreaHeight;
-    SYScreenType screenType = [self syScreenType];
-    switch (screenType)
+    CGFloat bottom = 0;
+    UIWindow *window = [UIApplication sharedApplication].windows.firstObject;
+    if (false == window.isKeyWindow)
     {
-        case SYScreen_iPhone_4_0:
-        case SYScreen_iPhone_4_7:
-        case SYScreen_iPhone_5_5:
+        UIWindow *keyWindow = [UIApplication sharedApplication].delegate.window;
+        if (nil != keyWindow && CGRectEqualToRect(keyWindow.bounds, UIScreen.mainScreen.bounds))
         {
-            safeAreaHeight = 0.0f;
+            window = keyWindow;
         }
-            break;
-            
-        case SYScreen_iPhone_5_8:
-        case SYScreen_iPhone_6_1:
-        case SYScreen_iPhone_6_5:
-        {
-            safeAreaHeight = 34.0f;
-        }
-            break;
-            
-        default:
-        {
-            safeAreaHeight = 0.0f;
-        }
-            break;
     }
-    return safeAreaHeight;
+    if (@available(iOS 11.0, *))
+    {
+        bottom = window.safeAreaInsets.bottom;
+    }
+    return bottom;
 }
 
 #pragma mark -- 获取电池电量
@@ -783,12 +769,14 @@
         
         languageByCode = @{
                            @"zh" : @(Language_Chinese),
+                           @"hk" : @(Language_Hongkong),
                            @"en" : @(Language_English),
                            @"ja" : @(Language_Japanese),
+                           @"ko" : @(Language_Korean),
                            @"de" : @(Language_German),
                            @"fr" : @(Language_French),
+                           @"it" : @(Language_Italy),
                            @"es" : @(Language_Spanish),
-                           @"ko" : @(Language_Korean),
                            };
     }
     NSString *localeLanguageCode = [language substringToIndex:2];
@@ -801,335 +789,96 @@
 #pragma mark -- 获取型号名
 + (NSString *)syModelName
 {
-    struct utsname systemInfo;
-    uname(&systemInfo);
-    
-    NSString *code = [NSString stringWithCString:systemInfo.machine
-                                        encoding:NSUTF8StringEncoding];
-    
-    
-    // 模拟器
-    if ([@"i386" isEqualToString:code] || [@"x86_64" isEqualToString:code])
-    {
-        return @"Simulator";
-    }
-    // iPod
-    else if ([@"iPod1,1" isEqualToString:code])
-    {
-        return @"iPod touch";
-    }
-    else if ([@"iPod2,1" isEqualToString:code])
-    {
-        return @"iPod touch 2";
-    }
-    else if ([@"iPod3,1" isEqualToString:code])
-    {
-        return @"iPod touch 3";
-    }
-    else if ([@"iPod4,1" isEqualToString:code])
-    {
-        return @"iPod touch 4";
-    }
-    else if ([@"iPod5,1" isEqualToString:code])
-    {
-        return @"iPod touch 5";
-    }
-    else if ([@"iPod7,1" isEqualToString:code])
-    {
-        return @"iPod touch 6";
-    }
-    else if ([@"iPod9,1" isEqualToString:code])
-    {
-        return @"iPod touch 7";
-    }
-    // iPhone
-    else if ([@"iPhone1,1" isEqualToString:code])
-    {
-        return @"iPhone";
-    }
-    else if ([@"iPhone1,2" isEqualToString:code])
-    {
-        return @"iPhone 3G";
-    }
-    else if ([@"iPhone2,1" isEqualToString:code])
-    {
-        return @"iPhone 3GS";
-    }
-    else if ([@"iPhone3,1" isEqualToString:code] || [@"iPhone3,2" isEqualToString:code] || [@"iPhone3,3" isEqualToString:code])
-    {
-        return @"iPhone 4";
-    }
-    else if ([@"iPhone4,1" isEqualToString:code])
-    {
-        return @"iPhone 4S";
-    }
-    else if ([@"iPhone5,1" isEqualToString:code] || [@"iPhone5,2" isEqualToString:code])
-    {
-        return @"iPhone 5";
-    }
-    else if ([@"iPhone5,3" isEqualToString:code] || [@"iPhone5,4" isEqualToString:code])
-    {
-        return @"iPhone 5C";
-    }
-    else if ([@"iPhone6,1" isEqualToString:code] || [@"iPhone6,2" isEqualToString:code])
-    {
-        return @"iPhone 5S";
-    }
-    else if ([@"iPhone7,2" isEqualToString:code])
-    {
-        return @"iPhone 6";
-    }
-    else if ([@"iPhone7,1" isEqualToString:code])
-    {
-        return @"iPhone 6-Plus";
-    }
-    else if ([@"iPhone8,1" isEqualToString:code])
-    {
-        return @"iPhone 6S";
-    }
-    else if ([@"iPhone8,2" isEqualToString:code])
-    {
-        return @"iPhone 6S-Plus";
-    }
-    else if ([@"iPhone8,4" isEqualToString:code])
-    {
-        return @"iPhone SE";
-    }
-    else if ([@"iPhone12,8" isEqualToString:code])
-    {
-        return @"iPhone SE 2";
-    }
-    else if ([@"iPhone14,6" isEqualToString:code])
-    {
-        return @"iPhone SE 3";
-    }
-    else if ([@"iPhone9,1" isEqualToString:code] || [@"iPhone9,3" isEqualToString:code])
-    {
-        return @"iPhone 7";
-    }
-    else if ([@"iphone9,2" isEqualToString:code] || [@"iphone9,4" isEqualToString:code])
-    {
-        return @"iPhone 7-Plsu";
-    }
-    else if ([@"iPhone10,1" isEqualToString:code] || [@"iPhone10,4" isEqualToString:code])
-    {
-        return @"iPhone 8";
-    }
-    else if ([@"iPhone10,2" isEqualToString:code] || [@"iPhone10,5" isEqualToString:code])
-    {
-        return @"iPhone 8-Plsu";
-    }
-    else if ([@"iPhone10,3" isEqualToString:code] || [@"iPhone10,6" isEqualToString:code])
-    {
-        return @"iPhone X";
-    }
-    else if ([@"iPhone11,2" isEqualToString:code])
-    {
-        return @"iPhone XS";
-    }
-    else if ([@"iPhone11,4" isEqualToString:code] || [@"iPhone11,6" isEqualToString:code])
-    {
-        return @"iPhone XS-Max";
-    }
-    else if ([@"iPhone11,8" isEqualToString:code])
-    {
-        return @"iPhone XR";
-    }
-    else if ([@"iPhone12,1" isEqualToString:code])
-    {
-        return @"iPhone 11";
-    }
-    else if ([@"iPhone12,2" isEqualToString:code])
-    {
-        return @"iPhone 11 Pro";
-    }
-    else if ([@"iPhone12,3" isEqualToString:code])
-    {
-        return @"iPhone 11 Pro Max";
-    }
-    else if ([@"iPhone13,1" isEqualToString:code])
-    {
-        return @"iPhone 12 mini";
-    }
-    else if ([@"iPhone13,2" isEqualToString:code])
-    {
-        return @"iPhone 12";
-    }
-    else if ([@"iPhone13,3" isEqualToString:code])
-    {
-        return @"iPhone 12 Pro";
-    }
-    else if ([@"iPhone13,4" isEqualToString:code])
-    {
-        return @"iPhone 12 Pro Max";
-    }
-    
-    else if ([@"iPhone14,4" isEqualToString:code])
-    {
-        return @"iPhone 13_mini";
-    }
-    else if ([@"iPhone14,5" isEqualToString:code])
-    {
-        return @"iPhone 13";
-    }
-    else if ([@"iPhone14,2" isEqualToString:code])
-    {
-        return @"iPhone 13 Pro";
-    }
-    else if ([@"iPhone14,3" isEqualToString:code])
-    {
-        return @"iPhone 13 Pro Max";
-    }
-    else if ([@"iPhone14,7" isEqualToString:code])
-    {
-        return @"iPhone 14";
-    }
-    else if ([@"iPhone14,8" isEqualToString:code])
-    {
-        return @"iPhone 14 Plus";
-    }
-    else if ([@"iPhone15,2" isEqualToString:code])
-    {
-        return @"iPhone 14 Pro";
-    }
-    else if ([@"iPhone15,3" isEqualToString:code])
-    {
-        return @"iPhone 14 Pro Max";
-    }
-    
-    // iPad
-    else if ([@"iPad1,1" isEqualToString:code])
-    {
-        return @"iPad";
-    }
-    else if ([@"iPad2,1" isEqualToString:code] || [@"iPad2,2" isEqualToString:code]
-             || [@"iPad2,3" isEqualToString:code] || [@"iPad2,4" isEqualToString:code])
-    {
-        return @"iPad 2";
-    }
-    else if ([@"iPad3,1" isEqualToString:code] || [@"iPad3,2" isEqualToString:code] || [@"iPad3,3" isEqualToString:code])
-    {
-        return @"iPad 3";
-    }
-    else if ([@"iPad3,4" isEqualToString:code] || [@"iPad3,5" isEqualToString:code] || [@"iPad3,6" isEqualToString:code])
-    {
-        return @"iPad 4";
-    }
-    else if ([@"iPad6,11" isEqualToString:code] || [@"iPad6,12" isEqualToString:code])
-    {
-        return @"iPad 5";
-    }
-    else if ([@"iPad7,5" isEqualToString:code] || [@"iPad7,6" isEqualToString:code])
-    {
-        return @"iPad 6";
-    }
-    else if ([@"iPad7,11" isEqualToString:code] || [@"iPad7,12" isEqualToString:code])
-    {
-        return @"iPad 7";
-    }
-    else if ([@"iPad11,6" isEqualToString:code] || [@"iPad11,7" isEqualToString:code])
-    {
-        return @"iPad 8";
-    }
-    else if ([@"iPad12,1" isEqualToString:code] || [@"iPad12,2" isEqualToString:code])
-    {
-        return @"iPad 9";
-    }
-    // iPad Air
-    else if ([@"iPad4,1" isEqualToString:code] || [@"iPad4,2" isEqualToString:code] || [@"iPad4,3" isEqualToString:code])
-    {
-        return @"iPad Air";
-    }
-    else if ([@"iPad5,3" isEqualToString:code] || [@"iPad5,4" isEqualToString:code])
-    {
-        return @"iPad Air 2";
-    }
-    else if ([@"iPad11,3" isEqualToString:code] || [@"iPad11,4" isEqualToString:code])
-    {
-        return @"iPad Air 3";
-    }
-    else if ([@"iPad13,1" isEqualToString:code] || [@"iPad13,2" isEqualToString:code])
-    {
-        return @"iPad Air 4";
-    }
-    else if ([@"iPad13,16" isEqualToString:code] || [@"iPad13,17" isEqualToString:code])
-    {
-        return @"iPad Air 5";
-    }
-    // iPad mini
-    else if ([@"iPad2,5" isEqualToString:code] || [@"iPad2,6" isEqualToString:code] || [@"iPad2,7" isEqualToString:code])
-    {
-        return @"iPad mini";
-    }
-    else if ([@"iPad4,4" isEqualToString:code] || [@"iPad4,5" isEqualToString:code] || [@"iPad4,6" isEqualToString:code])
-    {
-        return @"iPad mini 2";
-    }
-    else if ([@"iPad4,7" isEqualToString:code] || [@"iPad4,8" isEqualToString:code] || [@"iPad4,9" isEqualToString:code])
-    {
-        return @"iPad mini 3";
-    }
-    else if ([@"iPad5,1" isEqualToString:code] || [@"iPad5,2" isEqualToString:code])
-    {
-        return @"iPad mini 4";
-    }
-    else if ([@"iPad11,1" isEqualToString:code] || [@"iPad11,2" isEqualToString:code])
-    {
-        return @"iPad mini 5";
-    }
-    else if ([@"iPad14,1" isEqualToString:code] || [@"iPad14,2" isEqualToString:code])
-    {
-        return @"iPad mini 6";
-    }
-    // iPad Pro-9.7
-    else if ([@"iPad6,3" isEqualToString:code] || [@"iPad6,4" isEqualToString:code])
-    {
-        return @"iPad Pro (9.7-inch)";
-    }
-    // iPad Pro 10.5
-    else if ([@"iPad7,3" isEqualToString:code] || [@"iPad7,4" isEqualToString:code])
-    {
-        return @"iPad Pro (10.5-inch)";
-    }
-    // iPad Pro 11
-    else if ([@"iPad8,1" isEqualToString:code] || [@"iPad8,2" isEqualToString:code]
-             || [@"iPad8,3" isEqualToString:code] || [@"iPad8,4" isEqualToString:code])
-    {
-        return @"iPad Pro (11-inch)";
-    }
-    else if ([@"iPad8,9" isEqualToString:code] || [@"iPad8,10" isEqualToString:code])
-    {
-        return @"iPad Pro (11-inch) 2";
-    }
-    else if ([@"iPad13,4" isEqualToString:code] || [@"iPad13,5" isEqualToString:code]
-             || [@"iPad13,6" isEqualToString:code] || [@"iPad13,7" isEqualToString:code])
-    {
-        return @"iPad Pro (11-inch) 3";
-    }
-    // iPad Pro 12.9
-    else if ([@"iPad6,7" isEqualToString:code] || [@"iPad6,8" isEqualToString:code])
-    {
-        return @"iPad Pro (12.9-inch)";
-    }
-    else if ([@"iPad7,1" isEqualToString:code] || [@"iPad7,2" isEqualToString:code])
-    {
-        return @"iPad Pro (12.9-inch) 2";
-    }
-    else if ([@"iPad8,5" isEqualToString:code] || [@"iPad8,6" isEqualToString:code]
-             || [@"iPad8,7" isEqualToString:code] || [@"iPad8,8" isEqualToString:code])
-    {
-        return @"iPad Pro (12.9-inch) 3";
-    }
-    else if ([@"iPad8,11" isEqualToString:code] || [@"iPad8,12" isEqualToString:code])
-    {
-        return @"iPad Pro (12.9-inch) 4";
-    }
-    else if ([@"iPad13,8" isEqualToString:code] || [@"iPad13,9" isEqualToString:code]
-             || [@"iPad13,10" isEqualToString:code] || [@"iPad13,11" isEqualToString:code])
-    {
-        return @"iPad Pro (12.9-inch) 5";
-    }
-    return @"Unknow";
+    SYNameType nameType = [self syDeviceName];
+    NSString *name      = @"DeviceNameUnknow";
+    switch (nameType)
+    {
+        case SYName_Simulator: name = @"Simulator"; break;
+        // iPod
+        case SYName_iPod:    name = @"iPod";   break;
+        case SYName_iPod__2: name = @"iPod 2"; break;
+        case SYName_iPod__3: name = @"iPod 3"; break;
+        case SYName_iPod__4: name = @"iPod 4"; break;
+        case SYName_iPod__5: name = @"iPod 5"; break;
+        case SYName_iPod__6: name = @"iPod 6"; break;
+        case SYName_iPod__7: name = @"iPod 7"; break;
+        // iPhone
+        case SYName_iPhone:            name = @"iPhone";            break;
+        case SYName_iPhone_3G:         name = @"iPhone 3G";         break;
+        case SYName_iPhone_3GS:        name = @"iPhone 3GS";        break;
+        case SYName_iPhone_4:          name = @"iPhone 4";          break;
+        case SYName_iPhone_4S:         name = @"iPhone 4S";         break;
+        case SYName_iPhone_5:          name = @"iPhone 5";          break;
+        case SYName_iPhone_5C:         name = @"iPhone 5C";         break;
+        case SYName_iPhone_5S:         name = @"iPhone 5S";         break;
+        case SYName_iPhone_6:          name = @"iPhone 6";          break;
+        case SYName_iPhone_6_Plus:     name = @"iPhone 6 Plus";     break;
+        case SYName_iPhone_6S:         name = @"iPhone 6S";         break;
+        case SYName_iPhone_6S_Plus:    name = @"iPhone 6S Plus";    break;
+        case SYName_iPhone_SE:         name = @"iPhone SE";         break;
+        case SYName_iPhone_7:          name = @"iPhone 7";          break;
+        case SYName_iPhone_7_Plus:     name = @"iPhone 7 Plus";     break;
+        case SYName_iPhone_8:          name = @"iPhone 8";          break;
+        case SYName_iPhone_8_Plus:     name = @"iPhone 8 Plus";     break;
+        case SYName_iPhone_X:          name = @"iPhone X";          break;
+        case SYName_iPhone_XS:         name = @"iPhone XS";         break;
+        case SYName_iPhone_XS_Max:     name = @"iPhone XS Max";     break;
+        case SYName_iPhone_XR:         name = @"iPhone XR";         break;
+        case SYName_iPhone_11:         name = @"iPhone 11";         break;
+        case SYName_iPhone_11_Pro:     name = @"iPhone 11 Pro";     break;
+        case SYName_iPhone_11_Pro_Max: name = @"iPhone 11 Pro Max"; break;
+        case SYName_iPhone_SE_2:       name = @"iPhone SE 2";       break;
+        case SYName_iPhone_12_mini:    name = @"iPhone 12 Mini";    break;
+        case SYName_iPhone_12:         name = @"iPhone 12";         break;
+        case SYName_iPhone_12_Pro:     name = @"iPhone 12 Pro";     break;
+        case SYName_iPhone_12_Pro_Max: name = @"iPhone 12 Pro Max"; break;
+        case SYName_iPhone_13_mini:    name = @"iPhone 13 Mini";    break;
+        case SYName_iPhone_13:         name = @"iPhone 13";         break;
+        case SYName_iPhone_13_Pro:     name = @"iPhone 13 Pro";     break;
+        case SYName_iPhone_13_Pro_Max: name = @"iPhone 13 Pro Max"; break;
+        case SYName_iPhone_SE_3:       name = @"iPhone SE 3";       break;
+        case SYName_iPhone_14:         name = @"iPhone 14";         break;
+        case SYName_iPhone_14_Plus:    name = @"iPhone 14 Plus";    break;
+        case SYName_iPhone_14_Pro:     name = @"iPhone 14 Pro";     break;
+        case SYName_iPhone_14_Pro_Max: name = @"iPhone 14 Pro Max"; break;
+        // iPad
+        case SYName_iPad:   name = @"iPad 1"; break;
+        case SYName_iPad_2: name = @"iPad 2"; break;
+        case SYName_iPad_3: name = @"iPad 3"; break;
+        case SYName_iPad_4: name = @"iPad 4"; break;
+        case SYName_iPad_5: name = @"iPad 5"; break;
+        case SYName_iPad_6: name = @"iPad 6"; break;
+        case SYName_iPad_7: name = @"iPad 7"; break;
+        case SYName_iPad_8: name = @"iPad 8"; break;
+        case SYName_iPad_9: name = @"iPad 9"; break;
+        // iPad Air
+        case SYName_iPad_Air:   name = @"iPad Air 1"; break;
+        case SYName_iPad_Air_2: name = @"iPad Air 2"; break;
+        case SYName_iPad_Air_3: name = @"iPad Air 3"; break;
+        case SYName_iPad_Air_4: name = @"iPad Air 4"; break;
+        case SYName_iPad_Air_5: name = @"iPad Air 5"; break;
+        // iPad Mini
+        case SYName_iPad_Mini:   name = @"iPad Mini 1"; break;
+        case SYName_iPad_Mini_2: name = @"iPad Mini 2"; break;
+        case SYName_iPad_Mini_3: name = @"iPad Mini 3"; break;
+        case SYName_iPad_Mini_4: name = @"iPad Mini 4"; break;
+        case SYName_iPad_Mini_5: name = @"iPad Mini 5"; break;
+        case SYName_iPad_Mini_6: name = @"iPad Mini 5"; break;
+        // iPad Pro
+        case SYName_iPad_Pro_9_7:     name = @"iPad Pro (9.7-inch)";    break;
+        case SYName_iPad_Pro_10_5:    name = @"iPad Pro (10.5-inch)";   break;
+        case SYName_iPad_Pro_11__1:   name = @"iPad Pro (11-inch) 1";   break;
+        case SYName_iPad_Pro_11__2:   name = @"iPad Pro (11-inch) 2";   break;
+        case SYName_iPad_Pro_11__3:   name = @"iPad Pro (11-inch) 3";   break;
+        case SYName_iPad_Pro_12_9:    name = @"iPad Pro (12.9-inch) 1"; break;
+        case SYName_iPad_Pro_12_9__2: name = @"iPad Pro (12.9-inch) 2"; break;
+        case SYName_iPad_Pro_12_9__3: name = @"iPad Pro (12.9-inch) 3"; break;
+        case SYName_iPad_Pro_12_9__4: name = @"iPad Pro (12.9-inch) 4"; break;
+        case SYName_iPad_Pro_12_9__5: name = @"iPad Pro (12.9-inch) 5"; break;
+            
+        default: break;
+    }
+    return name;
 }
 
 @end
