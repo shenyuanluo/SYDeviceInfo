@@ -503,9 +503,24 @@
 {
     if (@available(iOS 13.0, *))
     {
-        return [UIApplication sharedApplication].windows.firstObject.windowScene.statusBarManager.statusBarFrame.size.height;
+        NSSet<UIScene *> *scenes             = [UIApplication sharedApplication].connectedScenes;
+        UIWindowScene *windowScene           = (UIWindowScene *)[scenes anyObject];
+        UIStatusBarManager *statusBarManager = windowScene.statusBarManager;
+        CGFloat statusBarHeight              = statusBarManager.statusBarFrame.size.height;
+        if( @available(iOS 16.0, *))
+        {
+            // 在 iPhone 14 Pro 及 Max 取到的状态栏高度是44，实际是56，需要做调整
+            BOOL needAdjust = (44 == statusBarHeight);
+            if (56 == windowScene.windows.firstObject.safeAreaInsets.top && needAdjust)
+            {
+                statusBarHeight = 56;
+            }
+        }
+        return statusBarHeight;
     }
-    return [UIApplication sharedApplication].statusBarFrame.size.height;
+    CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
+    CGFloat safeAreaTop     = UIApplication.sharedApplication.windows.firstObject.safeAreaInsets.top;
+    return MAX(statusBarHeight, safeAreaTop);
 }
 
 #pragma mark -- 获取设备导航栏高度
